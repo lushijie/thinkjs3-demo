@@ -11,6 +11,8 @@ module.exports = class extends Base {
   }
 
   async indexAction() {
+    this.cookie('theme', 'gray');
+    this.session('user', 'lushijie');
     this.assign('infoList', await this.infoModel.getAllInfo());
     return this.display();
   }

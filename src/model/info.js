@@ -4,9 +4,7 @@ module.exports = class extends think.Model {
   }
 
   async getAllInfo() {
-    // this.explain(true);
-    console.log('---', await this.getField('id'))
-    console.log(await this.buildSql());
+    // console.log(think.app.validators)
     return await this.select();
   }
 
