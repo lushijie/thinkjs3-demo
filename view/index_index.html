@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>New ThinkJS Application</title>
+  <script src="http://lib.baomitu.com/jquery/2.2.4/jquery.js"></script>
+</head>
+<body>
+  <ul>
+    {% for item in infoList %}
+      <li data-id="{{item.id}}">
+        {{ item.img }} - {{ item.order }}
+        <span class="delete">删除</span>
+      </li>
+    {% endfor %}
+  </ul>
+  <form>
+    <input type="text" name="img">
+    <input type="text" name="order">
+    <input type="file" name="file">
+    <button class="submit_btn">提交</button>
+  </form>
+  <script type="text/javascript">
+    $('.submit_btn').click(function(evt) {
+      evt.preventDefault();
+      var params = {
+        img: $('input[name="order"]').val(),
+        order: $('input[name="order"]').val(),
+
+      }
+      $.post('/index/addInfo', params, function(res) {
+        console.log(res);
+      })
+    });
+
+    $('.delete').click(function(evt) {
+      var id = $(this).parents('li').attr('data-id');
+      var that = this;
+      $.post('/index/deleteInfo', {id: id}, function(res) {
+        if(+res.errno === 0) {
+          $(that).parents('li').remove();
+        }
+      })
+    })
+
+  </script>
+</body>
+</html>
