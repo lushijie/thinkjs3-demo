@@ -25,10 +25,12 @@ module.exports = [
   },
   {
     handle: 'payload',
-    options: {}
+    options: {
+      uploadDir: path.join(think.ROOT_PATH, 'upload')
+    }
   },
   {
-    handle: 'router', 
+    handle: 'router',
     options: {}
   },
   'logic',

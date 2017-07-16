@@ -9,13 +9,12 @@
   <ul>
     {% for item in infoList %}
       <li data-id="{{item.id}}">
-        {{ item.img }} - {{ item.order }}
+        {{ item.filePath }} - {{ item.order }}
         <span class="delete">删除</span>
       </li>
     {% endfor %}
   </ul>
   <form>
-    <input type="text" name="img">
     <input type="text" name="order">
     <input type="file" name="file">
     <button class="submit_btn">提交</button>
@@ -23,20 +22,33 @@
   <script type="text/javascript">
     $('.submit_btn').click(function(evt) {
       evt.preventDefault();
-      var params = {
-        img: $('input[name="order"]').val(),
-        order: $('input[name="order"]').val(),
+      var formData = new FormData();
+      formData.append('order', $('input[name="order"]').val());
+      formData.append('file', $('input[name=file]')[0].files[0]);
 
-      }
-      $.post('/index/addInfo', params, function(res) {
-        console.log(res);
+      $.ajax({
+        url: '/index/addInfo',
+        method: 'POST',
+        data: formData,
+        contentType: false, // 注意这里应设为false
+        processData: false,
+        cache: false,
+        success: function(data) {
+          console.log(data);
+        },
+        error: function (jqXHR) {
+          console.log(jqXHR);
+        }
+      })
+      .done(function(data) {
+        console.log('done');
       })
     });
 
     $('.delete').click(function(evt) {
       var id = $(this).parents('li').attr('data-id');
       var that = this;
-      $.post('/index/deleteInfo', {id: id}, function(res) {
+      $.post('/index/delInfo', {id: id}, function(res) {
         if(+res.errno === 0) {
           $(that).parents('li').remove();
         }
