@@ -9,11 +9,16 @@ module.exports = class extends Base {
     super(...arg);
     this.infoModel = this.model('info');
   }
-
+  async testAction() {
+    console.log('------')
+  }
   async indexAction() {
     this.cookie('theme', 'gray');
     this.session('user', 'lushijie');
+    await this.controller('index').testAction();
+
     this.assign('infoList', await this.infoModel.getAllInfo());
+
     return this.display();
   }
 
