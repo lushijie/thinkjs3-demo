@@ -6,8 +6,25 @@ module.exports = class extends Base {
     super(...arg);
   }
 
+  __before() {
+    console.log('前置操作');
+  }
+
+  __call() {
+    console.log('魔术方法')
+    this.success('ok');
+  }
+
   indexAction() {
     return this.display();
+  }
+
+  configAction() {
+    return this.json(think.config());
+  }
+
+  extendAction() {
+    return this.success(think.extend1());
   }
 
   validatorAction() {
@@ -22,6 +39,10 @@ module.exports = class extends Base {
       return this.display('index_view_ejs', 'ejs');
     }
     return this.display('index_view_nunjucks');
+  }
+
+  __after() {
+    console.log('后置操作');
   }
 
 }
