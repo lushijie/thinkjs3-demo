@@ -4,5 +4,5 @@ global.commonFn = function() {
 }
 
 think.beforeStartServer(async () => {
-  console.log('This is beforeStartServer');
+  // console.log('This is beforeStartServer');
 })

@@ -18,6 +18,7 @@
     "think-model": "*",
     "think-payload": "~1.2.1",
     "think-session-file": "^1.0.5",
+    "think-typescript": "~1.0.3",
     "think-validator": "~1.2.3",
     "think-view": "^1.0.0",
     "think-view-ejs": "0.0.9",

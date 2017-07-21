@@ -28,6 +28,11 @@ module.exports = class extends Base {
     return this.json(think.config());
   }
 
+  crontabAction() {
+    console.log('crontabAction...');
+    return this.success();
+  }
+
   extendAction() {
     return this.success(think.extend1());
   }

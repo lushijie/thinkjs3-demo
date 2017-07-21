@@ -1,5 +1,6 @@
 const Application = require('thinkjs');
 const babel = require('think-babel');
+const typescript = require('think-typescript');
 const watcher = require('think-watcher');
 const notifier = require('node-notifier');
 
