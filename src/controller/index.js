@@ -19,6 +19,11 @@ module.exports = class extends Base {
     return this.display();
   }
 
+  csrfAction() {
+    console.log(this.ctx.csrf);
+    return this.success(this.ctx.csrf)
+  }
+
   configAction() {
     return this.json(think.config());
   }

@@ -14,6 +14,7 @@
     "npm": "~5.3.0",
     "smart-extend": "~1.7.2",
     "think-cache-file": "~1.0.8",
+    "think-csrf": "~1.0.1",
     "think-model": "*",
     "think-payload": "~1.2.1",
     "think-session-file": "^1.0.5",

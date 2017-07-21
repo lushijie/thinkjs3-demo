@@ -1,5 +1,6 @@
 const path = require('path');
 const isDev = think.env === 'development';
+const csrf = require('think-csrf');
 
 module.exports = [
   {
@@ -8,6 +9,14 @@ module.exports = [
       logRequest: isDev,
       sendResponseTime: isDev
     }
+  },
+  {
+      handle: csrf,
+      options: {}
+  },
+  {
+      handle: 'mid',
+      options: {}
   },
   {
     handle: 'resource',
