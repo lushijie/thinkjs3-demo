@@ -2,60 +2,10 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>New ThinkJS Application</title>
+  <title>ThinkJS3.0</title>
   <script src="http://lib.baomitu.com/jquery/2.2.4/jquery.js"></script>
 </head>
 <body>
-  {{ config.port }}
-  <ul>
-    {% for item in infoList %}
-      <li data-id="{{item.id}}">
-        {{ item.filePath }} - {{ item.order }}
-        <span class="delete">删除</span>
-      </li>
-    {% endfor %}
-  </ul>
-  <form>
-    <input type="text" name="order">
-    <input type="file" name="file">
-    <button class="submit_btn">提交</button>
-  </form>
-  <script type="text/javascript">
-    $('.submit_btn').click(function(evt) {
-      evt.preventDefault();
-      var formData = new FormData();
-      formData.append('order', $('input[name="order"]').val());
-      formData.append('file', $('input[name=file]')[0].files[0]);
-
-      $.ajax({
-        url: '/index/addInfo',
-        method: 'POST',
-        data: formData,
-        contentType: false, // 注意这里应设为false
-        processData: false,
-        cache: false,
-        success: function(data) {
-          console.log(data);
-        },
-        error: function (jqXHR) {
-          console.log(jqXHR);
-        }
-      })
-      .done(function(data) {
-        console.log('done');
-      })
-    });
-
-    $('.delete').click(function(evt) {
-      var id = $(this).parents('li').attr('data-id');
-      var that = this;
-      $.post('/index/delInfo', {id: id}, function(res) {
-        if(+res.errno === 0) {
-          $(that).parents('li').remove();
-        }
-      })
-    })
-
-  </script>
+  ThinkJS 是一款面向未来开发的 Node.js 框架，整合了很多项目最佳实践，让企业级开发变得如此简单、高效。从 3.0 开始，框架底层基于 Koa 2.x 实现，兼容 Koa 的所有功能。
 </body>
 </html>
