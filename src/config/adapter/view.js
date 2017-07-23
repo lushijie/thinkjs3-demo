@@ -14,14 +14,14 @@ module.exports = {
   nunjucks: {
     handle: nunjucks,
     options: { // nunjucks 的配置，例如重新定义定界符
-      tags: {
-        blockStart: '<%',
-        blockEnd: '%>',
-        variableStart: '<$',
-        variableEnd: '$>',
-        commentStart: '<#',
-        commentEnd: '#>'
-      }
+      // tags: {
+      //   blockStart: '<%',
+      //   blockEnd: '%>',
+      //   variableStart: '<$',
+      //   variableEnd: '$>',
+      //   commentStart: '<#',
+      //   commentEnd: '#>'
+      // }
     },
     beforeRender(env, nunjucks, handleOptions) { // 模板渲染之前执行，例如添加过滤器
       env.addFilter('myfilter', function(val, count) {

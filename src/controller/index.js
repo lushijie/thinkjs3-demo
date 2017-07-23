@@ -16,6 +16,23 @@ module.exports = class extends Base {
   }
 
   indexAction() {
+    // this.session('name', 'lushijie');
+    // console.log(this.session('name'));
+    // this.cookie('name', this.ctx.param().name);
+    return this.display();
+  }
+
+  cookieAction() {
+    // this.cookie('name', 'lushijie');
+    this.cookie('theme', 'yellow', { // 设定 cookie 时指定额外的配置
+      maxAge: 10000,
+      //path: '/theme'
+    });
+    return this.success();
+  }
+
+  sessionAction() {
+    // this.session('')
     return this.display();
   }
 

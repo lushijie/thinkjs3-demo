@@ -16,6 +16,13 @@ module.exports = {
   defaultErrno: 1000, // 默认错误号
   validateDefaultErrno: 1001, // 默认验证失败错误号
 
+  cookie: {
+    domain: '',
+    path: '/',
+    maxAge: 10 * 3600 * 1000, // 10个小时
+    signed: true,
+    keys: ['lushijie', 'lushijie1218'] // 当 signed 为 true 时，使用 keygrip 库加密时的密钥
+  },
 
   // 可以在这里定义自定义配置
   devHost: '192.0.0.2'

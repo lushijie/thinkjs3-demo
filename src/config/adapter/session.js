@@ -1,13 +1,22 @@
 const path = require('path');
+const cookieSession = require('think-session-cookie');
 const fileSession = require('think-session-file');
 
-module.exports = {
-  type: 'file',
+exports.session = {
+  type: 'cookie',
   common: {
     cookie: {
-      name: 'test',
-      keys: ['werwer', 'werwer'],
+      name: 'site',
+      keys: ['werwer', 'werwer'],  // 需要与config的cookie相同？不需要
       signed: true
+    }
+  },
+  cookie: {
+    handle: cookieSession,
+    cookie: {
+      maxAge: 24 * 3600 * 1000,
+      keys: ['welefen', 'suredy'], // ?
+      encrypt: true
     }
   },
   file: {
