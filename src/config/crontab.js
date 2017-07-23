@@ -2,7 +2,7 @@
 * @Author: lushijie
 * @Date:   2017-07-16 18:00:04
 * @Last Modified by:   lushijie
-* @Last Modified time: 2017-07-21 14:01:16
+* @Last Modified time: 2017-07-23 17:01:44
 */
 module.exports = [
   // {
@@ -13,9 +13,9 @@ module.exports = [
   //     console.log('crontab...');
   //   }
   // },
-  {
-    cron: '*/1 * * * *',
-    handle: '/index/crontab',
-    worker: 'all'
-  }
+  // {
+  //   cron: '*/1 * * * *',
+  //   handle: '/index/crontab',
+  //   worker: 'all'
+  // }
 ]
