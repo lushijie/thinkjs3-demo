@@ -40,7 +40,17 @@ module.exports = [
   },
   {
     handle: 'router',
-    options: {}
+    options: {
+      // defaultModule: 'home',
+      // defaultController: 'index',
+      // defaultAction: 'index',
+      // prefix: [],
+      // suffix: ['.html'],
+      // enableDefaultRouter: true,
+      // subdomainOffset: 2,
+      // subdomain: {},
+      // denyModules: []
+    }
   },
   'logic',
   'controller'

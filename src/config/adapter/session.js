@@ -2,7 +2,7 @@ const path = require('path');
 const cookieSession = require('think-session-cookie');
 const fileSession = require('think-session-file');
 
-exports.session = {
+module.exports = {
   type: 'cookie',
   common: {
     cookie: {
