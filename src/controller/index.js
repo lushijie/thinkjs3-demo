@@ -17,15 +17,15 @@ module.exports = class extends Base {
   }
 
   indexAction() {
+    return this.display();
+  }
+
+  emailAction() {
     thinkEmail(think.config('email').transport, think.config('email').options).then(info => {
       console.log(info);
     }, err => {
       console.log(err);
     });
-    // this.session('name', 'lushijie');
-    // console.log(this.session('name'));
-    // this.cookie('name', this.ctx.param().name);
-    // return this.display();
     return this.success();
   }
 
