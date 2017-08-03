@@ -1,4 +1,5 @@
 const Base = require('./base.js');
+const thinkEmail = require('think-email');
 
 module.exports = class extends Base {
 
@@ -16,10 +17,16 @@ module.exports = class extends Base {
   }
 
   indexAction() {
+    thinkEmail(think.config('email').transport, think.config('email').options).then(info => {
+      console.log(info);
+    }, err => {
+      console.log(err);
+    });
     // this.session('name', 'lushijie');
     // console.log(this.session('name'));
     // this.cookie('name', this.ctx.param().name);
-    return this.display();
+    // return this.display();
+    return this.success();
   }
 
   cookieAction() {

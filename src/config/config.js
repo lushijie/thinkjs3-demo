@@ -24,6 +24,47 @@ module.exports = {
     keys: ['lushijie', 'lushijie1218'] // 当 signed 为 true 时，使用 keygrip 库加密时的密钥
   },
 
+  email: {
+    transport: {
+      service: '126',
+      auth: {
+        user: "lushijie1218@126.com", // 账号
+        pass: "lushijie1218" // 授权密码
+      }
+    },
+    options: {
+      from: 'lushijie1218@126.com', // 发送者地址
+      to: '1036534499@qq.com', // 接受者,可以同时发送多个,以逗号隔开
+      cc: 'lushijie5516@126.com', // 抄送
+      bcc: '', // 密送
+      subject: '这里是标题123', // 标题
+      text: '这里是普通文本', // 文本
+      text: {
+        path: './package.json'
+      },
+      // html: '<b>这里是 HTML 内容 <img src="cid:00000001"/> </b>', // html 内容
+      // html: {
+      //   path: 'https://www.ctolib.com/nodemailer.html'
+      // }, // html 内容2
+      attachments:[
+        {
+          filename : '附件名称',
+          path: './package.json'
+        },{
+          filename: '附件2',
+          content: '123123'
+        },{
+          filename: '附件3',
+          path: 'http://p5.qhimg.com/t012e4e6855de50213e.jpg',
+          cid: '00000001'
+        }
+       ]
+    },
+    callback: (error, info) => {
+      console.log(error, info)
+    }
+  },
+
   // 可以在这里定义自定义配置
   devHost: '192.0.0.2'
 }
