@@ -17,6 +17,8 @@ module.exports = class extends Base {
   }
 
   indexAction() {
+    let serviceTest = this.service('test');
+    console.log(serviceTest.output());
     return this.display();
   }
 
