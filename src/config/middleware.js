@@ -18,6 +18,14 @@ module.exports = [
       handle: 'mdw1',
       options: {}
   },
+
+  // 'mdw1',
+
+  // function(ctx, next) {
+  //   console.log('自定义middleware2');
+  //   return next();
+  // },
+
   {
     handle: 'resource',
     enable: isDev,

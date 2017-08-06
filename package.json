@@ -16,6 +16,7 @@
     "think-cache-file": "~1.0.8",
     "think-csrf": "~1.0.1",
     "think-email": "~1.0.0",
+    "think-fetch": "~1.1.0",
     "think-model": "*",
     "think-payload": "~1.2.1",
     "think-session-cookie": "~1.0.3",

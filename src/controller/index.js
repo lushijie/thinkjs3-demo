@@ -1,5 +1,5 @@
 const Base = require('./base.js');
-const thinkEmail = require('think-email');
+// const thinkEmail = require('think-email');
 
 module.exports = class extends Base {
 
@@ -19,11 +19,12 @@ module.exports = class extends Base {
   indexAction() {
     let serviceTest = this.service('test');
     console.log(serviceTest.output());
+    //this.eTest();
     return this.display();
   }
 
   emailAction() {
-    thinkEmail(think.config('email').transport, think.config('email').options).then(info => {
+    this.sendEmail(think.config('email').transport, think.config('email').options).then(info => {
       console.log(info);
     }, err => {
       console.log(err);

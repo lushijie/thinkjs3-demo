@@ -38,5 +38,13 @@ module.exports = {
   pug: {
     handle: pug
   }
-
 }
+
+
+// module.exports = {
+//   type: 'nunjucks',
+//   viewPath: path.join(think.ROOT_PATH, 'view'),
+//   sep: '_',
+//   extname: '.html',
+//   handle: nunjucks
+// }

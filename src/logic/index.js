@@ -1,6 +1,6 @@
 module.exports = class extends think.Logic {
   indexAction(){
-
+    this.eTest();
   }
 
   validatorAction() {
