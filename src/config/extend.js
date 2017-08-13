@@ -2,11 +2,13 @@ const view = require('think-view');
 const model = require('think-model');
 const email = require('think-email');
 const fetch = require('think-fetch');
+const websocket = require('think-websocket');
 
 module.exports = [
   view, //make application support view
   model(think.app),
   email,
-  fetch
+  fetch,
+  websocket(think.app)
 ];
 
