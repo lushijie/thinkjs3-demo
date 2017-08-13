@@ -8,7 +8,7 @@ module.exports = class extends Base {
   }
 
   __before() {
-    console.log('前置操作');
+    console.log('前置操作 ');
   }
 
   __call() {
