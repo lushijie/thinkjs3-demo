@@ -1,5 +1,5 @@
 module.exports = {
-  port: 5050, // 端口号
+  port: 8360, // 端口号
   host: '127.0.0.1', // host
   workers: 0, // worker进程数，如果为0,worker会自动计算为cpu核心数; pm2 不能使用master方式启动
   createServer: null, // 自定以创建server，默认 think.app.listen 方式
@@ -37,12 +37,12 @@ module.exports = {
       to: '1036534499@qq.com', // 接受者,可以同时发送多个,以逗号隔开
       cc: 'lushijie5516@126.com', // 抄送
       bcc: '', // 密送
-      subject: '这里是标题123', // 标题
-      text: '这里是普通文本', // 文本
-      text: {
-        path: './package.json'
-      },
-      // html: '<b>这里是 HTML 内容 <img src="cid:00000001"/> </b>', // html 内容
+      subject: '邮件标题', // 标题
+      //text: '普通文本', // 文本
+      //text: {
+      //  path: './package.json'
+      //},
+      html: '<b>这里是 HTML 内容 <img src="cid:00000001"/> </b>', // html 内容
       // html: {
       //   path: 'https://www.ctolib.com/nodemailer.html'
       // }, // html 内容2
@@ -59,12 +59,6 @@ module.exports = {
           cid: '00000001'
         }
        ]
-    },
-    callback: (error, info) => {
-      console.log(error, info)
     }
   },
-
-  // 可以在这里定义自定义配置
-  devHost: '192.0.0.2'
 }

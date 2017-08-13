@@ -1,5 +1,4 @@
 const Base = require('./base.js');
-// const thinkEmail = require('think-email');
 
 module.exports = class extends Base {
 
@@ -7,19 +6,22 @@ module.exports = class extends Base {
     super(...arg);
   }
 
-  __before() {
-    console.log('前置操作 ');
-  }
-
   __call() {
     console.log('魔术方法')
     this.success('ok');
   }
 
+  __before() {
+    console.log('前置操作 ');
+  }
+
+  __after() {
+    console.log('后置操作');
+  }
+
   indexAction() {
     let serviceTest = this.service('test');
     console.log(serviceTest.output());
-    //this.eTest();
     return this.display();
   }
 
@@ -33,7 +35,7 @@ module.exports = class extends Base {
   }
 
   cookieAction() {
-    // this.cookie('name', 'lushijie');
+    this.cookie('name', 'lushijie');
     this.cookie('theme', 'yellow', { // 设定 cookie 时指定额外的配置
       maxAge: 10000,
       //path: '/theme'
@@ -42,7 +44,7 @@ module.exports = class extends Base {
   }
 
   sessionAction() {
-    // this.session('')
+    this.session('name', 'lushijie');
     return this.display();
   }
 
@@ -65,7 +67,7 @@ module.exports = class extends Base {
   }
 
   validatorAction() {
-    return this.display();
+    return this.success();
   }
 
   viewAction() {
@@ -76,10 +78,6 @@ module.exports = class extends Base {
       return this.display('index_view_ejs', 'ejs');
     }
     return this.display('index_view_nunjucks');
-  }
-
-  __after() {
-    console.log('后置操作');
   }
 
 }
