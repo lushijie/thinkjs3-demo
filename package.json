@@ -13,6 +13,7 @@
     "merge": "~1.2.0",
     "npm": "~5.3.0",
     "smart-extend": "~1.7.2",
+    "think-cache": "~1.0.5",
     "think-cache-file": "~1.0.8",
     "think-csrf": "~1.0.1",
     "think-email": "~1.0.0",
@@ -20,6 +21,7 @@
     "think-i18n": "~1.2.3",
     "think-model": "*",
     "think-payload": "~1.2.1",
+    "think-session": "~1.0.2",
     "think-session-cookie": "~1.0.3",
     "think-session-file": "^1.0.5",
     "think-typescript": "~1.0.3",
@@ -31,7 +33,7 @@
     "think-view-pug": "~1.0.6",
     "think-websocket": "~1.0.1",
     "think-websocket-socket.io": "~1.0.0",
-    "thinkjs": "next"
+    "thinkjs": "git://github.com/thinkjs/thinkjs.git#master"
   },
   "devDependencies": {
     "babel-preset-think-node": "^1.0.0",
