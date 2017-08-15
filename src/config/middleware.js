@@ -14,10 +14,10 @@ module.exports = [
   //     handle: csrf,
   //     options: {}
   // },
-  {
-      handle: 'mdw1',
-      options: {}
-  },
+  // {
+  //     handle: 'mdw1',
+  //     options: {}
+  // },
 
   // 'mdw1',
 
@@ -40,12 +40,12 @@ module.exports = [
       debug: isDev
     }
   },
-  {
-    handle: 'payload',
-    options: {
-      uploadDir: path.join(think.ROOT_PATH, 'upload')
-    }
-  },
+  // {
+  //   handle: 'payload',
+  //   options: {
+  //     uploadDir: path.join(think.ROOT_PATH, 'upload')
+  //   }
+  // },
   {
     handle: 'router',
     options: {

@@ -33,7 +33,7 @@
     "think-view-nunjucks": "^1.0.1",
     "think-view-pug": "~1.0.6",
     "think-websocket": "~1.0.1",
-    "think-websocket-socket.io": "~1.0.0",
+    "think-websocket-socket.io": "git://github.com/thinkjs/think-websocket-socket.io#master",
     "thinkjs": "git://github.com/thinkjs/thinkjs.git#master"
   },
   "devDependencies": {
