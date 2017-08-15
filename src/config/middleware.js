@@ -3,17 +3,17 @@ const isDev = think.env === 'development';
 const csrf = require('think-csrf'); // 第三方middleware
 
 module.exports = [
-  {
-    handle: 'meta',
-    options: {
-      logRequest: isDev,
-      sendResponseTime: isDev
-    }
-  },
-  {
-      handle: csrf,
-      options: {}
-  },
+  // {
+  //   handle: 'meta',
+  //   options: {
+  //     logRequest: isDev,
+  //     sendResponseTime: isDev
+  //   }
+  // },
+  // {
+  //     handle: csrf,
+  //     options: {}
+  // },
   {
       handle: 'mdw1',
       options: {}
