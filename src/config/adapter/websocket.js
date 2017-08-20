@@ -8,11 +8,12 @@ module.exports = {
   },
   socketio: {
     handle: socketio,
-    allowOrigin: null,
+    allowOrigin: '127.0.0.1:8360',
     path: '/socket.io',
     adapter: null,
     messages: [{
       open: '/websocket/open',
+      addUser: '/websocket/addUser'
     }]
   }
 }

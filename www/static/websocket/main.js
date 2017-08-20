@@ -25,6 +25,16 @@ $(function() {
 
   var socket = io();
 
+  socket.on('opend', function(data) {
+    console.log(data);
+  });
+
+  socket.on('joined', function(data) {
+    console.log(data);
+  });
+
+  socket.emit('addUser', 'thinkjs');
+
   // function addParticipantsMessage (data) {
   //   var message = '';
   //   if (data.numUsers === 1) {

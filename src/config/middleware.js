@@ -14,12 +14,12 @@ module.exports = [
   //     handle: csrf,
   //     options: {}
   // },
-  // {
-  //     handle: 'mdw1',
-  //     options: {}
-  // },
+  {
+      handle: 'mymiddleware',
+      options: {}
+  },
 
-  // 'mdw1',
+  // 'mymiddleware',
 
   // function(ctx, next) {
   //   console.log('自定义middleware2');
@@ -40,12 +40,12 @@ module.exports = [
       debug: isDev
     }
   },
-  // {
-  //   handle: 'payload',
-  //   options: {
-  //     uploadDir: path.join(think.ROOT_PATH, 'upload')
-  //   }
-  // },
+  {
+    handle: 'payload',
+    options: {
+      uploadDir: path.join(think.ROOT_PATH, 'upload')
+    }
+  },
   {
     handle: 'router',
     options: {
