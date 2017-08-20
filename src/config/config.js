@@ -28,8 +28,8 @@ module.exports = {
     transport: {
       service: '126',
       auth: {
-        user: "lushijie1218@126.com", // 账号
-        pass: "lushijie1218" // 授权密码
+        user: "账号", // 账号
+        pass: "授权密码" // 授权密码
       }
     },
     options: {
