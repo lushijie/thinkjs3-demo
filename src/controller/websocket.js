@@ -2,11 +2,11 @@
 * @Author: lushijie
 * @Date:   2017-08-13 18:51:35
 * @Last Modified by:   lushijie
-* @Last Modified time: 2017-08-20 15:18:04
+* @Last Modified time: 2017-08-20 19:14:31
 */
 const Base = require('./base.js');
 
-module.exports = class extends Base {
+module.exports = class extends think.Controller {
 
   constructor(...arg) {
     super(...arg);
