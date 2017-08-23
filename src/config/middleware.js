@@ -49,15 +49,7 @@ module.exports = [
   {
     handle: 'router',
     options: {
-      // defaultModule: 'home',
-      // defaultController: 'index',
-      // defaultAction: 'index',
-      // prefix: [],
-      // suffix: ['.html'],
-      // enableDefaultRouter: true,
-      // subdomainOffset: 2,
-      // subdomain: {},
-      // denyModules: []
+      suffix: ['.html'],
     }
   },
   'logic',
