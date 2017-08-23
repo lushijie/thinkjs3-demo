@@ -18,9 +18,19 @@
         <div class="form">
           <h3 class="title">What's your nickname?</h3>
           <input class="usernameInput" type="text" maxlength="14" />
+          <button class="send">提交</button>
         </div>
       </li>
     </ul>
-    <script type="text/javascript" src="/static/websocket/main.js"></script>
+    <script type="text/javascript">
+      var socket = io();
+
+      $('.send').on('click', function(evt) {
+        var username = $.trim($('.usernameInput').val());
+        if(username) {
+          socket.emit('addUser', username);
+        }
+      });
+    </script>
   </body>
 </html>

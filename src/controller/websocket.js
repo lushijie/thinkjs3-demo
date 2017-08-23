@@ -2,7 +2,7 @@
 * @Author: lushijie
 * @Date:   2017-08-13 18:51:35
 * @Last Modified by:   lushijie
-* @Last Modified time: 2017-08-20 19:14:31
+* @Last Modified time: 2017-08-23 10:07:28
 */
 const Base = require('./base.js');
 
@@ -24,7 +24,7 @@ module.exports = class extends think.Controller {
   }
 
   addUserAction() {
-    console.log('addUserAction ...');
+    console.log('addUserAction ...', this.data);
     // console.log(this.ctx.io) ？？？
     // console.log(this.data); // this.req.websocketData
     // console.log(this.websocket); // this.req.websocket
