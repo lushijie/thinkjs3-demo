@@ -1,6 +1,5 @@
 const isDev = think.app.env === 'development';
 const mysql = require('think-model-mysql');
-//const sequelize = require('think-model')
 
 const DB = {
   database: 'db_swf',
@@ -22,14 +21,16 @@ module.exports = {
     handle: mysql,
     ...DB
   },
-  // sequelize: {
-  //   database: 'cdn_agent',
-  //   user: '',
-  //   password: '',
-  //   options: {
-  //     host: '127.0.0.1',
-  //     dialect: 'mysql'
-  //   }
-  // }
+  sequelize: {
+    prefix: 'cdn_',
+    logConnect: true,
+    database: 'cdn_agent',
+    user: 'root',
+    password: 'root',
+    options: {
+      host: '127.0.0.1',
+      dialect: 'mysql'
+    }
+  }
 };
 
