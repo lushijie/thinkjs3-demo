@@ -30,6 +30,10 @@ module.exports = {
     options: {
       host: '127.0.0.1',
       dialect: 'mysql'
+    },
+    schema: {
+      timestamps: false,
+      freezeTableName: true,
     }
   }
 };
