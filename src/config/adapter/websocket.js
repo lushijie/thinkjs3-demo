@@ -1,4 +1,3 @@
-const path = require('path');
 const socketio = require('think-websocket-socket.io');
 
 module.exports = {
