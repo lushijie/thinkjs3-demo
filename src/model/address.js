@@ -2,7 +2,7 @@
 * @Author: lushijie
 * @Date:   2017-08-27 13:48:41
 * @Last Modified by:   lushijie
-* @Last Modified time: 2017-08-27 14:08:59
+* @Last Modified time: 2017-08-27 17:45:38
 */
 /*
 * @Author: lushijie
@@ -13,7 +13,6 @@
 module.exports = class extends think.Sequel {
   constructor(...props) {
     super(...props);
-    console.log('this.tableName in model: ', this.tableName);
   }
 
   get schema() {
@@ -29,7 +28,7 @@ module.exports = class extends think.Sequel {
       options: {
         timestamps: false,
         freezeTableName: true,
-        tableName: 'think_address'
+        tableName: 'think_address',
       }
     }
   }
