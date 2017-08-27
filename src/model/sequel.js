@@ -2,9 +2,8 @@
 * @Author: lushijie
 * @Date:   2017-08-23 18:56:12
 * @Last Modified by:   lushijie
-* @Last Modified time: 2017-08-27 13:35:05
+* @Last Modified time: 2017-08-27 13:45:07
 */
-const Sequelize = require('sequelize');
 module.exports = class extends think.Sequel {
   constructor(...props) {
     super(...props);
@@ -14,10 +13,10 @@ module.exports = class extends think.Sequel {
     return {
       attributes: {
         id: {
-          type: Sequelize.BIGINT,
+          type: think.Sequel.sequel.BIGINT,
           primaryKey: true
         },
-        name: Sequelize.STRING(255)
+        name: think.Sequel.sequel.STRING(255)
       },
       options: {
         timestamps: false,
