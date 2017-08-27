@@ -32,8 +32,7 @@ module.exports = {
       dialect: 'mysql'
     },
     schema: {
-      timestamps: false,
-      freezeTableName: true,
+      timestamps: false
     }
   }
 };
