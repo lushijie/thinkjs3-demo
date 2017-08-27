@@ -2,7 +2,7 @@
 * @Author: lushijie
 * @Date:   2017-08-24 09:33:17
 * @Last Modified by:   lushijie
-* @Last Modified time: 2017-08-27 13:34:00
+* @Last Modified time: 2017-08-27 13:51:59
 */
 module.exports = class extends think.Controller {
   constructor(...props) {
@@ -10,9 +10,9 @@ module.exports = class extends think.Controller {
   }
 
   async indexAction() {
-    let aliasModel1 = this.sequel('sequel', {type: 'sequel'});
-    let aliasModel2 = this.ctx.sequel('sequel', {type: 'sequel'});
-    let aliasModel3 = think.sequel('sequel', {type: 'sequel'});
+    let aliasModel1 = this.sequel('user', {type: 'sequel'});
+    let aliasModel2 = this.ctx.sequel('user', {type: 'sequel'});
+    let aliasModel3 = think.sequel('user', {type: 'sequel'});
 
     let result1 = (await aliasModel1.test()).length;    // controller call model
     let result2 = (await aliasModel2.test()).length;  // ctx

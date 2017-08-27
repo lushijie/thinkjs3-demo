@@ -1,5 +1,11 @@
 /*
 * @Author: lushijie
+* @Date:   2017-08-27 13:48:41
+* @Last Modified by:   lushijie
+* @Last Modified time: 2017-08-27 13:56:32
+*/
+/*
+* @Author: lushijie
 * @Date:   2017-08-23 18:56:12
 * @Last Modified by:   lushijie
 * @Last Modified time: 2017-08-27 13:45:07
@@ -7,6 +13,7 @@
 module.exports = class extends think.Sequel {
   constructor(...props) {
     super(...props);
+    console.log('this.tableName in model: ', this.tableName);
   }
 
   get schema() {
@@ -16,20 +23,14 @@ module.exports = class extends think.Sequel {
           type: think.Sequel.sequel.BIGINT,
           primaryKey: true
         },
-        name: think.Sequel.sequel.STRING(255)
+        userId: think.Sequel.sequel.BIGINT,
+        address: think.Sequel.sequel.STRING(255)
       },
       options: {
         timestamps: false,
         freezeTableName: true,
-        tableName: 'think_user'
+        tableName: 'think_address'
       }
     }
-  }
-
-  async test() {
-    console.log('this.models in model: ', this.models);
-    console.log('this.tableName in model: ', this.tableName);
-    console.log('this.sequel in model: ',(await this.sequel('sequel').findAll()).length);
-    return this.findAll();
   }
 }

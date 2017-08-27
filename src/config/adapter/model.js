@@ -23,13 +23,14 @@ module.exports = {
   },
   sequel: {
     prefix: 'think_',
-    logConnect: true,
+    logConnect: false,
     database: 'think-demo',
     user: 'root',
     password: 'root',
     options: {
       host: '127.0.0.1',
-      dialect: 'mysql'
+      dialect: 'mysql',
+      logging: false
     },
     schema: {
       timestamps: false
