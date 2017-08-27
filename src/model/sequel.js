@@ -2,10 +2,10 @@
 * @Author: lushijie
 * @Date:   2017-08-23 18:56:12
 * @Last Modified by:   lushijie
-* @Last Modified time: 2017-08-27 11:21:18
+* @Last Modified time: 2017-08-27 13:35:05
 */
 const Sequelize = require('sequelize');
-module.exports = class extends think.Sequelize {
+module.exports = class extends think.Sequel {
   constructor(...props) {
     super(...props);
   }
@@ -17,21 +17,20 @@ module.exports = class extends think.Sequelize {
           type: Sequelize.BIGINT,
           primaryKey: true
         },
-        name: Sequelize.STRING(255),
-        alias: Sequelize.STRING(255)
+        name: Sequelize.STRING(255)
       },
       options: {
         timestamps: false,
         freezeTableName: true,
-        tableName: 'cdn_alias'
+        tableName: 'think_user'
       }
     }
   }
 
   async test() {
-    console.log('think.Sequelize 属性 this.models=', this.models);
-    console.log('think.Sequelize 属性 this.tableName=', this.tableName);
-    console.log('think.Sequelize 属性 this.sequelize2',(await this.sequelize2('sequelize').findAll()).length, '------');
+    console.log('this.models in model: ', this.models);
+    console.log('this.tableName in model: ', this.tableName);
+    console.log('this.sequel in model: ',(await this.sequel('sequel').findAll()).length);
     return this.findAll();
   }
 }

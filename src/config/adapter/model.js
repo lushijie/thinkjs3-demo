@@ -21,10 +21,10 @@ module.exports = {
     handle: mysql,
     ...DB
   },
-  sequelize: {
-    prefix: 'cdn_',
+  sequel: {
+    prefix: 'think_',
     logConnect: true,
-    database: 'cdn_agent',
+    database: 'think-demo',
     user: 'root',
     password: 'root',
     options: {
