@@ -2,7 +2,7 @@
 * @Author: lushijie
 * @Date:   2017-08-27 13:48:41
 * @Last Modified by:   lushijie
-* @Last Modified time: 2017-08-27 13:56:32
+* @Last Modified time: 2017-08-27 14:08:59
 */
 /*
 * @Author: lushijie
@@ -33,4 +33,5 @@ module.exports = class extends think.Sequel {
       }
     }
   }
+
 }
