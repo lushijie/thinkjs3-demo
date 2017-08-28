@@ -1,14 +1,14 @@
 /*
 * @Author: lushijie
-* @Date:   2017-08-27 13:48:41
+* @Date:   2017-08-28 10:19:54
 * @Last Modified by:   lushijie
-* @Last Modified time: 2017-08-27 17:45:38
+* @Last Modified time: 2017-08-28 15:48:05
 */
 /*
 * @Author: lushijie
-* @Date:   2017-08-23 18:56:12
+* @Date:   2017-08-28 10:20:00
 * @Last Modified by:   lushijie
-* @Last Modified time: 2017-08-27 13:45:07
+* @Last Modified time: 2017-08-28 10:23:16
 */
 module.exports = class extends think.Sequel {
   constructor(...props) {
@@ -19,18 +19,16 @@ module.exports = class extends think.Sequel {
     return {
       attributes: {
         id: {
-          type: think.Sequel.sequel.BIGINT,
+          type: think.Sequel.Sequel.BIGINT,
           primaryKey: true
         },
-        userId: think.Sequel.sequel.BIGINT,
-        address: think.Sequel.sequel.STRING(255)
+        name: think.Sequel.Sequel.STRING(255),
       },
       options: {
         timestamps: false,
         freezeTableName: true,
-        tableName: 'think_address',
+        tableName: 'think_teacher',
       }
     }
   }
-
 }
