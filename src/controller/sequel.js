@@ -2,7 +2,7 @@
 * @Author: lushijie
 * @Date:   2017-08-24 09:33:17
 * @Last Modified by:   lushijie
-* @Last Modified time: 2017-08-28 20:13:40
+* @Last Modified time: 2017-08-28 22:25:51
 */
 module.exports = class extends think.Controller {
   constructor(...props) {
@@ -23,7 +23,7 @@ module.exports = class extends think.Controller {
       // belongsTo
       let player = this.sequel('sequel/player', {type: 'sequel'});
       let team = this.sequel('sequel/team', {type: 'sequel'});
-      player.belongsTo(team, {foreignKey: 'teamId'});
+      player.belongsTo(team, /*{foreignKey: 'teamId'}*/);
       let result = await player.findAll({
         include: [
           { model: team }
@@ -38,7 +38,7 @@ module.exports = class extends think.Controller {
       // hasOne
       let player = this.sequel('sequel/player', {type: 'sequel'});
       let partner = this.sequel('sequel/partner', {type: 'sequel'});
-      player.hasOne(partner, {foreignKey: 'playerId'});
+      player.hasOne(partner, /*{foreignKey: 'playerId'}*/);
       return this.json(await player.findAll({
         include: [
           {
@@ -50,7 +50,7 @@ module.exports = class extends think.Controller {
       // hasMany
       let player = this.sequel('sequel/player', {type: 'sequel'});
       let trophy = this.sequel('sequel/trophy', {type: 'sequel'});
-      player.hasMany(trophy, {foreignKey: 'playerId'});
+      player.hasMany(trophy, /*{foreignKey: 'playerId'}*/);
       return this.json(await player.findAll({
         include: [
           { model: trophy }
