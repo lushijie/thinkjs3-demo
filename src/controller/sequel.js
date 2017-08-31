@@ -2,7 +2,7 @@
 * @Author: lushijie
 * @Date:   2017-08-24 09:33:17
 * @Last Modified by:   lushijie
-* @Last Modified time: 2017-08-29 16:46:51
+* @Last Modified time: 2017-08-31 13:07:29
 */
 module.exports = class extends think.Controller {
   constructor(...props) {
@@ -34,7 +34,7 @@ module.exports = class extends think.Controller {
       // belongsTo
       let player = this.sequel('sequel/player', {type: 'sequel'});
       let team = this.sequel('sequel/team', {type: 'sequel'});
-      player.belongsTo(team, {'foreignKey': 'teamId'});
+      // player.belongsTo(team, {'foreignKey': 'teamId'});
       let result = await player.findAll({
         include: [
           { model: team }
@@ -48,7 +48,7 @@ module.exports = class extends think.Controller {
       // hasOne
       let player = this.sequel('sequel/player', {type: 'sequel'});
       let partner = this.sequel('sequel/partner', {type: 'sequel'});
-      player.hasOne(partner, {'foreignKey': 'playerId'});
+      // player.hasOne(partner, {'foreignKey': 'playerId'});
       return this.json(await player.findAll({
         include: [
           {
@@ -60,7 +60,7 @@ module.exports = class extends think.Controller {
       // hasMany
       let player = this.sequel('sequel/player', {type: 'sequel'});
       let trophy = this.sequel('sequel/trophy', {type: 'sequel'});
-      player.hasMany(trophy);
+      // player.hasMany(trophy);
       return this.json(await player.findAll({
         include: [
           { model: trophy }
@@ -71,9 +71,9 @@ module.exports = class extends think.Controller {
       let player = this.sequel('sequel/player', {type: 'sequel'});
       let teacher = this.sequel('sequel/teacher', {type: 'sequel'});
       let teacher_player = this.sequel('sequel/teacher_player', {type: 'sequel'});
-      player.belongsToMany(teacher, {
-        through: teacher_player
-      });
+      // player.belongsToMany(teacher, {
+      //   through: teacher_player
+      // });
       return this.json(await player.findAll({
         include: [
           { model: teacher }

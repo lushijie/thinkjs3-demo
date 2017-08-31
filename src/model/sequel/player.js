@@ -2,7 +2,7 @@
 * @Author: lushijie
 * @Date:   2017-08-28 10:20:00
 * @Last Modified by:   lushijie
-* @Last Modified time: 2017-08-29 16:42:20
+* @Last Modified time: 2017-08-31 13:08:58
 */
 
 
@@ -12,7 +12,6 @@ module.exports = class extends think.Sequel {
   }
 
   get schema() {
-    // let teacher_player = think.sequel('sequel/teacher_player', {type: 'sequel'});
     return {
       attributes: {
         id: {
@@ -27,19 +26,18 @@ module.exports = class extends think.Sequel {
         freezeTableName: true,
         tableName: 'think_player',
       },
-      // relations: [
-      //   { 'sequel/team': think.Sequel.Relation.BELONG_TO },
-      //   { 'sequel/partner': think.Sequel.Relation.HAS_ONE },
-      //   { 'sequel/trophy': think.Sequel.Relation.HAS_MANY },
-      //   {
-      //     'sequel/teacher': think.Sequel.Relation.MANY_TO_MANY,
-      //     options: {
-      //       // through: this.sequel('sequel/teacher_player', {type: 'sequel'}) // wrong
-      //       through: think.sequel('sequel/teacher_player', {type: 'sequel'})
-      //       // through: teacher_player
-      //     }
-      //   },
-      //]
+      relations: [
+        { 'sequel/team': think.Sequel.Relation.BELONG_TO },
+        { 'sequel/partner': think.Sequel.Relation.HAS_ONE },
+        { 'sequel/trophy': think.Sequel.Relation.HAS_MANY },
+        {
+          'sequel/teacher': think.Sequel.Relation.MANY_TO_MANY,
+          options: {
+            // through: this.sequel('sequel/teacher_player', {type: 'sequel'}) // wrong, do not use this.sequel in schema
+            through: think.sequel('sequel/teacher_player', {type: 'sequel'})
+          }
+        },
+      ]
     }
   }
 
