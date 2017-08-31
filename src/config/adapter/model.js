@@ -35,6 +35,17 @@ module.exports = {
     schema: {
       timestamps: false
     }
+  },
+  mongoose: {
+    host: '127.0.0.1',
+    port: 27000,
+    user: 'lushijie',
+    prefix: 'think_',
+    password: 'lushijiepwd',
+    database: 'think-demo',
+    useCollectionPlural: false,
+    options: {
+    }
   }
 };
 
