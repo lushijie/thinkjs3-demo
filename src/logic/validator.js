@@ -2,7 +2,7 @@
 * @Author: lushijie
 * @Date:   2017-08-20 18:52:08
 * @Last Modified by:   lushijie
-* @Last Modified time: 2017-08-20 19:31:01
+* @Last Modified time: 2017-09-01 10:22:53
 */
 module.exports = class extends think.Logic {
   get scope() {
@@ -23,6 +23,7 @@ module.exports = class extends think.Logic {
     }
 
     let msgs = {
+      app_id: '{name} 不能为空(自定义错误)',
       name: '{name}必须要填写'
     }
     if(!this.validate(rules, msgs)) {
