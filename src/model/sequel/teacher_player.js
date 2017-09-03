@@ -2,7 +2,7 @@
 * @Author: lushijie
 * @Date:   2017-08-28 10:20:00
 * @Last Modified by:   lushijie
-* @Last Modified time: 2017-08-28 15:47:47
+* @Last Modified time: 2017-09-03 16:15:50
 */
 module.exports = class extends think.Sequel {
   constructor(...props) {
@@ -19,11 +19,11 @@ module.exports = class extends think.Sequel {
         playerId: think.Sequel.Sequel.BIGINT,
         teacherId: think.Sequel.Sequel.BIGINT,
       },
-      options: {
-        timestamps: false,
-        freezeTableName: true,
-        tableName: 'think_teacher_player',
-      }
+      // options: {
+      //   timestamps: false,
+      //   freezeTableName: true,
+      //   tableName: 'think_teacher_player',
+      // }
     }
   }
 }

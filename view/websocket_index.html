@@ -23,7 +23,7 @@
       </li>
     </ul>
     <script type="text/javascript">
-      var socket = io();
+      var socket = io('http://localhost:8360');
 
       $('.send').on('click', function(evt) {
         var username = $.trim($('.usernameInput').val());
@@ -31,6 +31,19 @@
           socket.emit('addUser', username);
         }
       });
+
+      socket.on('opend', function(data) {
+        console.log(data);
+      });
+
+      socket.on('joined', function(data) {
+        console.log(data);
+      });
+
+      socket.on('addUserCallBack', function(data) {
+        console.log(data);
+      });
+
     </script>
   </body>
 </html>

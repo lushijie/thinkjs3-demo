@@ -23,17 +23,21 @@ module.exports = {
   },
   sequel: {
     prefix: 'think_',
+    connectionString: 'mysql://root:root@127.0.0.1/think-demo',
     logConnect: false,
-    database: 'think-demo',
-    user: 'root',
-    password: 'root',
+    // database: 'think-demo',
+    // user: 'root',
+    // password: 'root',
     options: {
-      host: '127.0.0.1',
-      dialect: 'mysql',
-      logging: false
+      // host: '127.0.0.1',
+      // dialect: 'mysql',
+      logging: false,
+      define: {
+        timestamps: false
+      }
     },
     schema: {
-      timestamps: false
+      //timestamps: false
     }
   },
   mongoose: {

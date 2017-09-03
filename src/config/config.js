@@ -15,7 +15,7 @@ module.exports = {
   errmsgField: 'errmsg', // errmsg 字段
   defaultErrno: 1000, // 默认错误号
   validateDefaultErrno: 1001, // 默认验证失败错误号
-
+  stickyCluster: true,
   cookie: {
     domain: '',
     path: '/',
