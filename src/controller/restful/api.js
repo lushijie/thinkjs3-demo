@@ -1,7 +1,7 @@
-const BaseRest = require('./rest.js');
+const BaseRest = require('./base.js');
 module.exports = class extends BaseRest {
   getAction() {
-    console.log(this.get('id'))
+    console.log('id=', this.getId());
     console.log('getAction');
   }
 
