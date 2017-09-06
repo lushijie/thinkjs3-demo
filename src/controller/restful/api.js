@@ -1,19 +1,19 @@
 const BaseRest = require('./base.js');
 module.exports = class extends BaseRest {
   getAction() {
-    console.log('id=', this.getId());
-    console.log('getAction');
+    console.log('id=', this.id);
+    return this.success('getAction');
   }
 
   postAction() {
-    console.log('postAction');
+    return this.success('postAction');
   }
 
   putAction() {
-    console.log('putAction');
+    return this.success('putAction');
   }
 
   deleteAction(){
-    console.log('deleteAction');
+    return this.success('deleteAction');
   }
 };
