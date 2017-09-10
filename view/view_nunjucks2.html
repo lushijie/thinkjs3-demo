@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>模板引擎</title>
+  </head>
+  <body>
+    <p>{%config.port%}</p>
+    <p>过滤器: {% name|myfilter(5) %}</p>
+    <p>读取注入的config: {% config.port %}</p>
+    <p>读取注入的ctx: {% ctx.isGet %}</p>
+    <p>读取注入的controller: {% controller.ip %}</p>
+  </body>
+</html>
