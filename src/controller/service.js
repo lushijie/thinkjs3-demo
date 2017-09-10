@@ -2,7 +2,7 @@
 * @Author: lushijie
 * @Date:   2017-08-20 19:03:45
 * @Last Modified by:   lushijie
-* @Last Modified time: 2017-08-20 19:06:06
+* @Last Modified time: 2017-09-10 16:54:40
 */
 module.exports = class extends think.Controller {
   constructor(...arg) {
@@ -10,7 +10,7 @@ module.exports = class extends think.Controller {
   }
 
   indexAction() {
-    let serviceInst = this.service('service1');
-    return this.success(serviceInst.text())
+    let serviceInst = this.service('sms');
+    return serviceInst.send();
   }
 }

@@ -2,10 +2,9 @@
 * @Author: lushijie
 * @Date:   2017-08-20 19:32:17
 * @Last Modified by:   lushijie
-* @Last Modified time: 2017-09-10 14:11:46
+* @Last Modified time: 2017-09-10 15:58:28
 */
 const ejs = require('think-view-ejs');
-const nunjucks = require('think-view-nunjucks');
 module.exports = class extends think.Controller {
   constructor(...arg) {
     super(...arg);

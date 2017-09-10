@@ -2,7 +2,7 @@ const isDev = think.app.env === 'development';
 const mysql = require('think-model-mysql');
 
 const DB = {
-  database: 'db_swf',
+  database: 'think-demo',
   prefix: 'think_',
   encoding: 'utf8',
   host: '127.0.0.1',
