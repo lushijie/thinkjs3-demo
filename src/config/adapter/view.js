@@ -1,6 +1,4 @@
-const handlebars = require('think-view-handlebars');
 const nunjucks = require('think-view-nunjucks');
-const pug = require('think-view-pug');
 const ejs = require('think-view-ejs');
 const path = require('path');
 
@@ -10,6 +8,9 @@ module.exports = {
     viewPath: path.join(think.ROOT_PATH, 'view'),
     sep: '_',
     extname: '.html'
+  },
+  pug: {
+    handle: 'pug'
   },
   nunjucks: {
     handle: nunjucks,
@@ -31,12 +32,6 @@ module.exports = {
   },
   ejs: {
     handle: ejs
-  },
-  handlebars: {
-    handle: handlebars
-  },
-  pug: {
-    handle: pug
   }
 }
 

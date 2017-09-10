@@ -25,6 +25,7 @@
     "think-model-mysql": "~1.0.4",
     "think-mongoose": "~1.0.1",
     "think-payload": "~1.2.1",
+    "think-sequelize": "~1.0.3",
     "think-session": "~1.0.2",
     "think-session-cookie": "~1.0.3",
     "think-session-file": "^1.0.5",
