@@ -6,8 +6,8 @@ module.exports = {
   type: 'cookie',
   common: {
     cookie: {
-      name: 'site',
-      keys: ['werwer', 'werwer'],  // 需要与config的cookie相同？不需要
+      name: 'thinkjs',
+      keys: ['lushijie1218', 'lushijie'],  // 需要与config的cookie相同？不需要
       signed: true
     }
   },

@@ -11,6 +11,7 @@ module.exports = {
     path: '/socket.io',
     adapter: null,
     messages: [{
+      close: '/websocket/close',
       open: '/websocket/open',
       addUser: '/websocket/addUser'
     }]

@@ -2,10 +2,10 @@
 * @Author: lushijie
 * @Date:   2017-08-13 18:51:35
 * @Last Modified by:   lushijie
-* @Last Modified time: 2017-09-03 10:16:56
+* @Last Modified time: 2017-09-11 18:34:05
 */
-const Base = require('./base.js');
 
+let ids = [];
 module.exports = class extends think.Controller {
 
   constructor(...arg) {
@@ -16,12 +16,23 @@ module.exports = class extends think.Controller {
     return this.display();
   }
 
+  closeAction() {
+    let socketId = this.ctx.websocket.conn.id;
+    console.log('断开连接', socketId);
+    ids = ids.filter(val => val !== socketId);
+  }
+
   openAction() {
+    let socketId = this.ctx.websocket.conn.id;
+    console.log('创建连接', socketId);
+    ids.push(socketId);
     this.emit('opend', 'This client opened successfully!')
     this.broadcast('joined', 'There is a new client joined successfully!')
   }
 
   addUserAction() {
+    console.log('当前连接列表：', ids);
+    this.ctx.req.io.sockets.connected[ids[0]].emit('addUserCallBack', '只有第一个可以收到这个消息');
     // console.log('addUserAction ...', this.data);
     // console.log(this.ctx.io) ？？？
     // console.log(this.wsData); // this.req.websocketData
