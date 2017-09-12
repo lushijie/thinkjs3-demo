@@ -16,7 +16,7 @@ think.beforeStartServer(async () => {
 
 // 该回调函数只会在一个进程下执行
 think.messenger.on('sendSMS', (data) => {
-  console.log('sendSMS..', data);
+  // console.log('sendSMS..', data);
   think.beforeStartServer(async () => {
     // console.log(think.app.controllers);
     // console.log('This is beforeStartServer222');
