@@ -2,7 +2,7 @@
 * @Author: lushijie
 * @Date:   2017-08-13 18:51:35
 * @Last Modified by:   lushijie
-* @Last Modified time: 2017-09-11 18:34:05
+* @Last Modified time: 2017-09-12 09:25:38
 */
 
 let ids = [];
@@ -17,13 +17,14 @@ module.exports = class extends think.Controller {
   }
 
   closeAction() {
-    let socketId = this.ctx.websocket.conn.id;
+    let socketId = this.websocket.id;
     console.log('断开连接', socketId);
     ids = ids.filter(val => val !== socketId);
   }
 
   openAction() {
-    let socketId = this.ctx.websocket.conn.id;
+    console.log();
+    let socketId = this.websocket.id;
     console.log('创建连接', socketId);
     ids.push(socketId);
     this.emit('opend', 'This client opened successfully!')
@@ -38,7 +39,7 @@ module.exports = class extends think.Controller {
     // console.log(this.wsData); // this.req.websocketData
     // console.log(this.websocket); // this.req.websocket
     // console.log(this.isWebsocket); // this.isMethod('WEBSOCKET')
-    this.broadcast('addUserCallBack', this.wsData);
+    // this.broadcast('addUserCallBack', this.wsData);
     // return this.success();
   }
 }
