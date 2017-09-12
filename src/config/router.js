@@ -4,6 +4,11 @@ module.exports = [
   [ /^\/user\/(\w+)$/, '/router/user/getInfoByName?name=:1'],
 ];
 
-
-// [/api2\/(.*)/i, '/router/:1', 'get,post'],
-// ['/api/:name', 'router/:name', 'get,post'],
+// module.exports = [
+//   {
+//     match: /^\/restful/,
+//     rules: [
+//       ['/restful/api/:id?', 'rest'],
+//     ]
+//   }
+// ]
