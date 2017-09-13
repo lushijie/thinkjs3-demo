@@ -16,6 +16,7 @@
     "smart-extend": "~1.7.2",
     "think-cache": "~1.0.5",
     "think-cache-file": "~1.0.8",
+    "think-cache-redis": "~1.1.0",
     "think-cluster": "~1.4.0",
     "think-controller": "~1.0.3",
     "think-csrf": "~1.0.2",
