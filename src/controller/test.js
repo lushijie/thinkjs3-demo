@@ -2,7 +2,7 @@
 * @Author: lushijie
 * @Date:   2017-09-13 09:19:40
 * @Last Modified by:   lushijie
-* @Last Modified time: 2017-09-13 09:40:15
+* @Last Modified time: 2017-09-13 11:58:43
 */
 
 module.exports = class extends think.Controller {
@@ -11,12 +11,10 @@ module.exports = class extends think.Controller {
   }
 
   async indexAction() {
-    await this.cache('lushijie', 'val5', {
-      type: 'redis',
-      redis: {
-        timeout: 10000
-      }
-    })
+    console.log(await this.cache('lushijie12313'));
+    await this.cache('lushijie123', async() => {
+      console.log('奔跑吧少年');
+    });
     return this.success('test index');
   }
 }
