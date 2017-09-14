@@ -1,5 +1,6 @@
 const isDev = think.app.env === 'development';
 const mysql = require('think-model-mysql');
+const mongoose = require('think-mongoose');
 
 const DB = {
   database: 'think-demo',
@@ -12,7 +13,7 @@ const DB = {
 }
 
 module.exports = {
-  type: 'mysql',
+  type: 'mongoose',
   common: {
     logSql: isDev,
     logger: msg => console.log(msg)
@@ -49,6 +50,7 @@ module.exports = {
     database: 'think-demo',
     useCollectionPlural: false,
     options: {
+      // strict: false
     }
   }
 };
