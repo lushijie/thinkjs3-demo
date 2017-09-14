@@ -13,7 +13,7 @@ const DB = {
 }
 
 module.exports = {
-  type: 'mongoose',
+  type: 'mysql',
   common: {
     logSql: isDev,
     logger: msg => console.log(msg)
