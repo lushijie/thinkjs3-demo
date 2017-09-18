@@ -12,4 +12,5 @@ module.exports = [
     ]
   },
   [ /^\/user\/(\w+)$/, '/router/user/getInfoByName?name=:1'],
+  [ /^\/pad\/.*/, '/pad/index?name=:1'],
 ]
