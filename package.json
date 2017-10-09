@@ -42,7 +42,8 @@
     "think-view-pug": "~1.0.6",
     "think-websocket": "~1.0.1",
     "think-websocket-socket.io": "git://github.com/thinkjs/think-websocket-socket.io#master",
-    "thinkjs": "git://github.com/thinkjs/thinkjs.git#master"
+    "thinkjs": "git://github.com/thinkjs/thinkjs.git#master",
+    "ws": "~3.2.0"
   },
   "devDependencies": {
     "babel-preset-think-node": "^1.0.0",

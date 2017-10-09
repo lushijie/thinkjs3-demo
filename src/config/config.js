@@ -1,7 +1,7 @@
 module.exports = {
   port: 8360, // 端口号
   host: '127.0.0.1', // host
-  workers: 0, // worker进程数，如果为0,worker会自动计算为cpu核心数; pm2 不能使用master方式启动
+  workers: 1, // worker进程数，如果为0,worker会自动计算为cpu核心数; pm2 不能使用master方式启动
   createServer: null, // 自定以创建server，默认 think.app.listen 方式
   startServerTimeout: 3000, // 启动server超时时间
   reloadSignal: 'SIGUSR2', // reload process signal
