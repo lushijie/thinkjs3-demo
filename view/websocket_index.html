@@ -17,18 +17,31 @@
       <li class="login page">
         <div class="form">
           <h3 class="title">What's your nickname?</h3>
-          <input class="usernameInput" type="text" maxlength="14" />
-          <button class="send">提交</button>
+          <div>
+            <input class="usernameInput" type="text" maxlength="14" />
+          </div>
+
+          <div>
+            <input class="roomInput" type="text" maxlength="14" />
+          </div>
+
+          <div>
+            <button class="send">提交</button>
+          </div>
         </div>
       </li>
     </ul>
     <script type="text/javascript">
-      var socket = io('http://localhost:8360');
+      var socket = io('http://localhost:8360/space1');
 
       $('.send').on('click', function(evt) {
         var username = $.trim($('.usernameInput').val());
+        var room = $.trim($('.roomInput').val());
         if(username) {
-          socket.emit('addUser', username);
+          socket.emit('addUser', {
+            username: username,
+            room: room
+          });
         }
       });
 
@@ -41,7 +54,7 @@
       });
 
       socket.on('addUserCallBack', function(data) {
-        console.log(data);
+        console.log('addUser 回调：', data);
       });
 
     </script>

@@ -66,26 +66,30 @@ button {
   width: 100%;
 }
 
-.login.page .form .usernameInput {
+.login.page .form .usernameInput, .login.page .form .roomInput {
   background-color: transparent;
   border: none;
   border-bottom: 2px solid #fff;
   outline: none;
-  padding-bottom: 15px;
+  padding: 15px;
   text-align: center;
   width: 400px;
+}
+
+.login.page .form .send {
+  margin-top: 20px;
 }
 
 .login.page .title {
   font-size: 200%;
 }
 
-.login.page .usernameInput {
+.login.page .usernameInput, .login.page .roomInput {
   font-size: 200%;
   letter-spacing: 3px;
 }
 
-.login.page .title, .login.page .usernameInput {
+.login.page .title, .login.page .usernameInput, .login.page .roomInput {
   color: #fff;
   font-weight: 100;
 }

@@ -3,6 +3,13 @@ think.app.on("appReady", () => {
   //console.log('ready...');
 });
 
+global.getASCIISum = function(str) {
+  if(str && think.isString(str)) {
+    return str.split('').reduce((acc, val) => {
+      return acc + val.charCodeAt(0);
+    }, 0);
+  }
+}
 
 
 global.commonFn = function() {
