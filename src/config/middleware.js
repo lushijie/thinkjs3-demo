@@ -10,10 +10,10 @@ module.exports = [
       sendResponseTime: isDev
     }
   },
-  {
-      handle: csrf,
-      options: {}
-  },
+  // {
+  //     handle: csrf,
+  //     options: {}
+  // },
   {
       handle: 'mymiddleware',
       options: {}

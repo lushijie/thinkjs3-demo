@@ -2,16 +2,16 @@
 * @Author: lushijie
 * @Date:   2017-08-20 18:52:08
 * @Last Modified by:   lushijie
-* @Last Modified time: 2017-09-17 18:24:39
+* @Last Modified time: 2017-10-09 11:05:13
 */
 module.exports = class extends think.Logic {
-  get scope() {
-    return {
-      app_id: {
-        required: true
-      }
-    }
-  }
+  // get scope() {
+  //   return {
+  //     app_id: {
+  //       required: true
+  //     }
+  //   }
+  // }
 
   indexAction(){
     let rules = {
@@ -38,6 +38,21 @@ module.exports = class extends think.Logic {
         isThinkjs: true,
         aliasName: '姓名'
       }
+    }
+  }
+
+  index3Action() {
+    let rules = {
+      arr : {
+        array: true,
+        children: {
+          int : {min:1,max:99},
+        }
+      }
+    }
+
+    if(!this.validate(rules)) {
+      return this.fail(this.validateErrors);
     }
   }
 }
