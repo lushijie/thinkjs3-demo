@@ -2,7 +2,7 @@
 * @Author: lushijie
 * @Date:   2017-08-13 18:51:35
 * @Last Modified by:   lushijie
-* @Last Modified time: 2017-10-09 14:34:04
+* @Last Modified time: 2017-10-09 15:24:22
 */
 
 let ids = [];
@@ -35,7 +35,7 @@ module.exports = class extends think.Controller {
     console.log('当前连接列表：', ids);
     this.ctx.req.io.sockets.connected[ids[0]].emit('addUserCallBack', '只有第一个可以收到这个消息');
     // console.log('addUserAction ...', this.data);
-    // console.log(this.ctx.io) ？？？
+    // console.log(this.ctx.req.io);
     console.log(this.wsData); // this.req.websocketData
     // console.log(this.websocket); // this.req.websocket
     // console.log(this.isWebsocket); // this.isMethod('WEBSOCKET')
