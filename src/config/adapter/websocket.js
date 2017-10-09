@@ -1,9 +1,20 @@
 const socketio = require('think-websocket-socket.io');
 
 module.exports = {
-  type: 'socketio',
+  type: 'sockjs',
   common: {
     // common config
+  },
+  sockjs: {
+    handle: 'sockjs',
+    allowOrigin: '127.0.0.1:8360',
+    path: '/socket.io',
+    adapter: null,
+    messages: [{
+      close: '/websocket/close',
+      open: '/websocket/open',
+      addUser: '/websocket/addUser'
+    }]
   },
   socketio: {
     handle: socketio,
