@@ -1,7 +1,8 @@
 const socketio = require('think-websocket-socket.io');
+const ws = require('think-websocket-ws');
 
 module.exports = {
-  type: 'socketio',
+  type: 'ws',
   common: {
     // common config
   },
@@ -25,26 +26,20 @@ module.exports = {
       // }
     ]
   },
-  sockjs: {
-    handle: 'sockjs',
-    allowOrigin: '127.0.0.1:8360',
-    path: '/socket.io',
-    adapter: null,
-    messages: [{
-      close: '/websocket/close',
-      open: '/websocket/open',
-      addUser: '/websocket/addUser'
-    }]
-  },
   ws: {
-    handle: socketio,
-    allowOrigin: '127.0.0.1:8360',
-    path: '/socket.io',
-    adapter: null,
+    handle: ws,
+    path: '/ws',
+    onConnection: function(sc, req) {
+      console.log('ws 连接成功')
+    },
+    // port: 8360,
+    verifyClient: function(info) {
+      return true;
+    },
     messages: [{
-      close: '/websocket/close',
-      open: '/websocket/open',
-      addUser: '/websocket/addUser'
+      close: '/ws/close',
+      open: '/ws/open',
+      addUser: '/ws/addUser'
     }]
   }
 }

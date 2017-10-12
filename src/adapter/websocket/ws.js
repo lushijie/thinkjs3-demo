@@ -2,14 +2,40 @@
 * @Author: lushijie
 * @Date:   2017-10-09 14:00:01
 * @Last Modified by:   lushijie
-* @Last Modified time: 2017-10-09 14:36:14
+* @Last Modified time: 2017-10-10 16:01:32
 */
-const ws = require('ws');
-const socketio = require('socket.io');
+const WebSocketServer = require('ws').Server;
 const helper = require('think-helper');
 const mockHttp = require('think-mock-http');
+const WS_STATUS = {
+  CONNECTING: 0,
+  OPEN: 1,
+  CLOSING: 2,
+  CLOSED: 3
+};
 
-module.exports = class Ws {
+let getDestructResult = (properties, sourceObject) => {
+  let destObject = {}, aliasMap = {};
+
+  properties = Array.isArray(properties) ? properties : [properties];
+  properties = properties.map(function(ele) {
+    if (ele.indexOf(':') > -1) {
+      aliasMap[ele.split(':')[0]] = ele.split(':')[1];
+    }
+    return ele.split(':')[0];
+  });
+
+  Object.keys(sourceObject).forEach(function(ele) {
+    if (properties.indexOf(ele) > -1) {
+      if(sourceObject[ele] !== undefined) {
+        destObject[aliasMap[ele] || ele] = sourceObject[ele];
+      }
+    }
+  });
+  return destObject;
+};
+
+module.exports = class WebSocket {
   /**
    * constructor
    */
@@ -17,20 +43,9 @@ module.exports = class Ws {
     this.server = server;
     this.config = config;
     this.app = app;
-    this.io = socketio(server);
-
-    // https://socket.io/docs/server-api/#server-adapter-value
-    if (config.adapter) {
-      this.io.adapter(config.adapter);
-    }
-    // https://socket.io/docs/server-api/#server-origins-value
-    if (config.allowOrigin) {
-      this.io.origins(config.allowOrigin);
-    }
-    // https://socket.io/docs/server-api/#server-path-value
-    if (config.path) {
-      this.io.path(this.config.path);
-    }
+    let wssConfig = getDestructResult(['host', 'port', 'backlog', 'verifyClient', 'handleProtocols', 'path', 'noServer', 'clientTracking', 'perMessageDeflate', 'maxPayload'], config);
+    wssConfig.server = server;
+    this.wss = new WebSocketServer(wssConfig, config.callback || null);
   }
   /**
    * mock request
@@ -40,8 +55,7 @@ module.exports = class Ws {
    */
   mockRequst(url, data, socket, open) {
     if (url[0] !== '/') url = `/${url}`;
-
-    const args = {url, websocketData: data, websocket: socket, io: this.io, method: 'WEBSOCKET'};
+    const args = {url, websocketData: data, websocket: socket, method: 'WEBSOCKET'};
     if (open) {
       args.req = socket.request;
     }
@@ -50,23 +64,34 @@ module.exports = class Ws {
   /**
    * register socket
    */
-  registerSocket(io, messages = {}) {
-    io.on('connection', socket => {
+  registerSocket(wss, messages = {}) {
+    let eventListener = getDestructResult(['onConnection', 'onError', 'onHeaders', 'onListening'], this.config);
+
+    wss.on('connection', (socket, request) => {
       if (messages.open) {
         this.mockRequst(messages.open, undefined, socket, true);
       }
+
       if (messages.close) {
-        socket.on('disconnect', () => {
+        socket.on('close', () => {
           this.mockRequst(messages.close, undefined, socket);
         });
       }
+
       for (const key in messages) {
         if (key === 'open' || key === 'close') continue;
-        socket.on(key, data => {
-          this.mockRequst(messages[key], data, socket);
+        socket.on('message', data => {
+          data = JSON.parse(data);
+          if(key === data.event) {
+            this.mockRequst(messages[key], data, socket);
+          }
         });
       }
     });
+
+    wss.on('listening', eventListener.onListening || (() => {}));
+    wss.on('headers', eventListener.onHeaders || (() => {}));
+    wss.on('error', eventListener.onError || (() => {}));
   }
   /**
    * emit an event
@@ -75,7 +100,12 @@ module.exports = class Ws {
    * @param {Object} socket
    */
   emit(event, data, socket) {
-    socket.emit(event, data);
+    if (socket.readyState === WS_STATUS.OPEN) {
+      socket.send(JSON.stringify({
+        event,
+        data
+      }));
+    };
   }
   /**
    * broadcast event
@@ -84,8 +114,14 @@ module.exports = class Ws {
    * @param {Object} socket
    */
   broadcast(event, data, socket) {
-    socket.emit(event, data);
-    socket.broadcast.emit(event, data);
+    this.wss.clients.forEach((client) => {
+      if (client.readyState === WS_STATUS.OPEN) {
+        client.send(JSON.stringify({
+          event,
+          data
+        }));
+      }
+    });
   }
   /**
    * run
@@ -96,8 +132,8 @@ module.exports = class Ws {
       messages = [messages];
     }
     messages.forEach(item => {
-      const sc = item.namespace ? this.io.of(item.namespace) : this.io;
-      this.registerSocket(sc, item);
+      const wss = this.wss;
+      this.registerSocket(wss, item);
     });
   }
 };
