@@ -14,8 +14,8 @@ module.exports = {
     messages: [
       {
         // namespace: 'space1',
-        close: '/websocket/close1',
-        open: '/websocket/open1',
+        close: '/websocket/close',
+        open: '/websocket/open',
         addUser: '/websocket/addUser'
       },
       // {
