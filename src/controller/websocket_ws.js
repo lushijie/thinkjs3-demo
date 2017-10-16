@@ -2,7 +2,7 @@
 * @Author: lushijie
 * @Date:   2017-08-13 18:51:35
 * @Last Modified by:   lushijie
-* @Last Modified time: 2017-10-10 15:47:27
+* @Last Modified time: 2017-10-16 10:52:12
 */
 
 let clients = [];
@@ -34,24 +34,10 @@ module.exports = class extends think.Controller {
   }
 
   addUserAction() {
-    // console.log('addUserAction ...', this.wsData);
-    // this.emit('addUserCallBack', this.wsData);
     this.broadcast('addUserCallBack', this.wsData);
-    // this.ctx.req.io.sockets.connected[ids[0]].emit('addUserCallBack', '只有第一个可以收到这个消息');
     // console.log(this.wsData); // this.req.websocketData, this.data is deprecated
     // console.log(this.websocket); // this.req.websocket
     // console.log(this.isWebsocket); // this.isMethod('WEBSOCKET')
 
-    // if(this.wsData && this.wsData.room) {
-    //   console.log(`${this.websocket.id} join the room ${this.wsData.room}`);
-    //   this.websocket.join(this.wsData.room);
-    // }
-
-    //this.broadcast('addUserCallBack', this.wsData);
-
-    // 向 room 中的用户进行广播，不在该 room 的用户不会收到消息
-    // this.ctx.req.io.to(this.wsData.room).emit('addUserCallBack', this.wsData);
-
-    // this.ctx.req.io.of('space1').to(this.wsData.room).emit('addUserCallBack', this.wsData);
   }
 }
