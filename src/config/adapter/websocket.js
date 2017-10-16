@@ -14,15 +14,15 @@ module.exports = {
     messages: [
       {
         // namespace: 'space1',
-        close: '/websocket/close',
-        open: '/websocket/open',
-        addUser: '/websocket/addUser'
+        close: '/websocket_socketio/close',
+        open: '/websocket_socketio/open',
+        addUser: '/websocket_socketio/addUser'
       },
       // {
       //   namespace: 'space2',
-      //   close: '/websocket/close2',
-      //   open: '/websocket/open2',
-      //   addUser: '/websocket/addUser'
+      //   close: '/websocket_socketio/close2',
+      //   open: '/websocket_socketio/open2',
+      //   addUser: '/websocket_socketio/addUser'
       // }
     ]
   },
@@ -37,9 +37,9 @@ module.exports = {
       return true;
     },
     messages: [{
-      close: '/ws/close',
-      open: '/ws/open',
-      addUser: '/ws/addUser'
+      close: '/websocket_ws/close',
+      open: '/websocket_ws/open',
+      addUser: '/websocket_ws/addUser'
     }]
   }
 }
