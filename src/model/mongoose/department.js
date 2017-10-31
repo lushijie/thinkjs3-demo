@@ -2,7 +2,7 @@
 * @Author: lushijie
 * @Date:   2017-08-31 14:50:30
 * @Last Modified by:   lushijie
-* @Last Modified time: 2017-09-18 09:51:17
+* @Last Modified time: 2017-10-25 19:08:50
 */
 module.exports = class extends think.Mongoose {
   constructor(...props) {
@@ -11,13 +11,13 @@ module.exports = class extends think.Mongoose {
 
   get schema() {
     return {
-      id: Number,
-      name: String,
+      id: String, // 部门编号
+      name: String, // 名称
     }
   }
 
-  async savePlayer(player) {
-    await this.create(player);
-    return this.find();
-  }
+  // async savePlayer(player) {
+  //   await this.create(player);
+  //   return this.find();
+  // }
 }
