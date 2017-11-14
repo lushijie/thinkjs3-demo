@@ -33,10 +33,13 @@
     </ul>
     <script type="text/javascript">
       var socket = io('http://localhost:8360/space1');
+      socket.emit('getTunnelDevice', '31010/#');
 
       $('.send').on('click', function(evt) {
         var username = $.trim($('.usernameInput').val());
         var room = $.trim($('.roomInput').val());
+
+
         if(username) {
           socket.emit('addUser', {
             username: username,
@@ -47,6 +50,7 @@
 
       socket.on('opend', function(data) {
         console.log(data);
+        //socket.emit('getTunnelDevice', '31010/#');
       });
 
       socket.on('joined', function(data) {

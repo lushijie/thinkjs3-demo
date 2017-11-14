@@ -2,7 +2,7 @@
 * @Author: lushijie
 * @Date:   2017-08-13 18:51:35
 * @Last Modified by:   lushijie
-* @Last Modified time: 2017-10-16 10:49:18
+* @Last Modified time: 2017-11-14 16:26:33
 */
 
 let ids = [];
@@ -13,7 +13,7 @@ module.exports = class extends think.Controller {
   }
 
   indexAction() {
-    return this.display();
+    return this.display('websocket_index');
   }
 
   closeAction() {
@@ -51,5 +51,9 @@ module.exports = class extends think.Controller {
     this.ctx.req.io.to(this.wsData.room).emit('addUserCallBack', this.wsData);
     // 或
     // this.ctx.req.io.of('space1').to(this.wsData.room).emit('addUserCallBack', this.wsData);
+  }
+
+  getTunnelDeviceAction() {
+    console.log(123123);
   }
 }

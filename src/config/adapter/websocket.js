@@ -2,7 +2,7 @@ const socketio = require('think-websocket-socket.io');
 const ws = require('think-websocket-ws');
 
 module.exports = {
-  type: 'ws',
+  type: 'socketio',
   common: {
     // common config
   },
@@ -13,10 +13,11 @@ module.exports = {
     adapter: null,
     messages: [
       {
-        // namespace: 'space1',
+        namespace: 'space1',
         close: '/websocket_socketio/close',
         open: '/websocket_socketio/open',
-        addUser: '/websocket_socketio/addUser'
+        addUser: '/websocket_socketio/addUser',
+        getTunnelDevice: '/websocket_socketio/getTunnelDevice'
       },
       // {
       //   namespace: 'space2',

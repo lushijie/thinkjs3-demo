@@ -1,6 +1,5 @@
 const path = require('path');
 const isDev = think.env === 'development';
-const csrf = require('think-csrf'); // 第三方middleware
 
 module.exports = [
   {
@@ -10,10 +9,6 @@ module.exports = [
       sendResponseTime: isDev
     }
   },
-  // {
-  //     handle: csrf,
-  //     options: {}
-  // },
   {
       handle: 'mymiddleware',
       options: {}
