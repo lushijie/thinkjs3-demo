@@ -14,12 +14,12 @@ module.exports = [
       options: {}
   },
 
-  // 'mymiddleware',
+  'mymiddleware',
 
-  // function(ctx, next) {
-  //   console.log('自定义middleware2');
-  //   return next();
-  // },
+  function(ctx, next) {
+    // console.log('自定义middleware2');
+    return next();
+  },
 
   {
     handle: 'resource',
@@ -32,7 +32,10 @@ module.exports = [
   {
     handle: 'trace',
     options: {
-      debug: isDev
+      debug: isDev,
+      error(err, ctx) {
+        console.log(err, ctx);
+      }
     }
   },
   {
@@ -44,7 +47,12 @@ module.exports = [
   {
     handle: 'router',
     options: {
+      // prefix: ['/thinkjs'],
       suffix: ['.html'],
+      subdomainOffset: 2,
+      subdomain: {
+        'lib2,lushijie': 'yyyyy'
+      }
     }
   },
   'logic',
