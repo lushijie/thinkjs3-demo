@@ -2,7 +2,7 @@
 * @Author: lushijie
 * @Date:   2017-08-13 18:51:35
 * @Last Modified by:   lushijie
-* @Last Modified time: 2017-11-14 16:26:33
+* @Last Modified time: 2017-11-21 10:42:25
 */
 
 let ids = [];
@@ -53,7 +53,7 @@ module.exports = class extends think.Controller {
     // this.ctx.req.io.of('space1').to(this.wsData.room).emit('addUserCallBack', this.wsData);
   }
 
-  getTunnelDeviceAction() {
-    console.log(123123);
-  }
+  // getTunnelDeviceAction() {
+  //   console.log(123123);
+  // }
 }

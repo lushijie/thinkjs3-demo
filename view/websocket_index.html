@@ -32,8 +32,11 @@
       </li>
     </ul>
     <script type="text/javascript">
-      var socket = io('http://localhost:8360/space1');
-      socket.emit('getTunnelDevice', '31010/#');
+      // var socket = io('http://localhost:8360/space1');
+      var socket = io('http://localhost:8360/space1', {
+        path: '/socket1234'
+      });
+      // socket.emit('getTunnelDevice', '31010/#');
 
       $('.send').on('click', function(evt) {
         var username = $.trim($('.usernameInput').val());

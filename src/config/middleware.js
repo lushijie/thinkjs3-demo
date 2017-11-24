@@ -48,11 +48,11 @@ module.exports = [
     handle: 'router',
     options: {
       // prefix: ['/thinkjs'],
-      suffix: ['.html'],
-      subdomainOffset: 2,
-      subdomain: {
-        'lib2,lushijie': 'yyyyy'
-      }
+      // suffix: ['.html'],
+      // subdomainOffset: 2,
+      // subdomain: {
+      //   'lib2,lushijie': 'yyyyy'
+      // }
     }
   },
   'logic',
