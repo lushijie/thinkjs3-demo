@@ -10,16 +10,15 @@ module.exports = [
     }
   },
   {
-      handle: 'mymiddleware',
-      options: {}
+    handle: 'graphql',
+    options: {}
   },
+  // 'graphql',
 
-  'mymiddleware',
-
-  function(ctx, next) {
-    // console.log('自定义middleware2');
-    return next();
-  },
+  // function(ctx, next) {
+  //   // console.log('自定义middleware2');
+  //   return next();
+  // },
 
   {
     handle: 'resource',

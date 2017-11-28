@@ -1,13 +1,12 @@
 /*
 * @Author: lushijie
-* @Date:   2017-07-21 11:04:51
+* @Date:   2017-11-28 12:06:48
 * @Last Modified by:   lushijie
-* @Last Modified time: 2017-11-20 11:31:25
+* @Last Modified time: 2017-11-28 12:07:07
 */
 module.exports = (options = {}) => {
   return (ctx, next) => {
-    // console.log('自定义 middleware');
+    console.log('graphql');
     return next();
   };
 };
-
