@@ -7,7 +7,17 @@
 <body>
   123
   <script type="text/javascript">
-
+    $.ajax({
+       type: "POST",
+       url: "/graphql/search",
+       data: {
+        query: '{hello}'
+       },
+       success: function(msg){
+        console.log(msg);
+         // alert( "Data Saved: " + msg );
+       }
+    });
   </script>
 </body>
 </html>
