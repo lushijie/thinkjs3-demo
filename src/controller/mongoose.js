@@ -2,7 +2,7 @@
 * @Author: lushijie
 * @Date:   2017-08-31 14:56:26
 * @Last Modified by:   lushijie
-* @Last Modified time: 2017-10-25 16:43:47
+* @Last Modified time: 2017-12-02 18:42:01
 */
 const mongoose = require('mongoose');
 mongoose.Promise = require('bluebird');
@@ -38,12 +38,18 @@ module.exports = class extends think.Controller {
   //   this.json(result);
   // }
 
+  async testAction() {
+    const Grouping2Employee = this.model('mongoose/grouping2employee');
+    const data = await Grouping2Employee.find().populate('employee').exec();
+    this.success(data);
+  }
+
   async findEmployeeAction() {
     let Employee = this.mongoose('mongoose/employee', {type: 'mongoose'});
     let Department = this.mongoose('mongoose/department', {type: 'mongoose'});
     let result = await Employee.find().populate('dep').exec();
     // let result = await Employee.find().exec();
-    console.log(result)
-    this.success('ok');
+    // console.log(result)
+    this.json(result);
   }
 }
