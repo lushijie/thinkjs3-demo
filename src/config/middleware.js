@@ -57,9 +57,9 @@ module.exports = [
   'logic',
   {
     handle: 'controller',
-    options: {
-      emptyController: 'empty'
-    }
+    // options: {
+    //   emptyController: 'empty'
+    // }
   }
 
 ];
