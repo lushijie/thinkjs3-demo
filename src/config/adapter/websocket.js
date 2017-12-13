@@ -1,5 +1,6 @@
 const socketio = require('think-websocket-socket.io');
 const ws = require('think-websocket-ws');
+const redis = require('socket.io-redis');
 
 module.exports = {
   type: 'socketio',
@@ -8,25 +9,19 @@ module.exports = {
   },
   socketio: {
     handle: socketio,
-    // allowOrigin: '127.0.0.1:8360/socket123',
-    path: '/socket1234',
-    adapter: null,
+    allowOrigin: '127.0.0.1:8360',
+    path: '/socket.io',
+    // adapter: redis,
     messages: [
       {
         namespace: 'space1',
-        close: '/websocket_socketio/close',
-        open: '/websocket_socketio/open',
-        addUser: '/websocket_socketio/addUser',
-        // getTunnelDevice: '/websocket_socketio/getTunnelDevice'
+        // close: '/restful/api/getAction',
+        open: '/restful/api/getAction',
+        // addUser: '/websocket_socketio/addUser'
       },
-      // {
-      //   namespace: 'space2',
-      //   close: '/websocket_socketio/close2',
-      //   open: '/websocket_socketio/open2',
-      //   addUser: '/websocket_socketio/addUser'
-      // }
     ]
   },
+
   ws: {
     handle: ws,
     path: '/ws',

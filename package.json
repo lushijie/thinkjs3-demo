@@ -19,6 +19,7 @@
     "pug": "^2.0.0-rc.4",
     "sequelize": "^4.7.2",
     "smart-extend": "^1.7.2",
+    "socket.io-redis": "~5.2.0",
     "sockjs": "^0.3.18",
     "think-babel": "^1.1.0",
     "think-cache": "^1.0.7",
