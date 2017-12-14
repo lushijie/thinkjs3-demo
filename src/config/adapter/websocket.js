@@ -11,7 +11,7 @@ module.exports = {
     handle: socketio,
     allowOrigin: '127.0.0.1:8360',
     path: '/socket.io',
-    // adapter: redis,
+    // adapter: redis({...}),
     messages: [
       {
         namespace: 'space1',
