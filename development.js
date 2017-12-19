@@ -8,7 +8,11 @@ const instance = new Application({
   ROOT_PATH: __dirname,
   watcher: watcher,
   transpiler: [babel, {
-    presets: ['think-node'],
+    presets: [['think-node']],
+    // presets: [['think-node', {
+    //     "transform-async-to-generator": false
+    //   }
+    // ]],
     babelrc: false
   }],
   notifier: notifier.notify.bind(notifier),
