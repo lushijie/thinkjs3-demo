@@ -2,20 +2,31 @@
 * @Author: lushijie
 * @Date:   2017-08-24 09:33:17
 * @Last Modified by:   lushijie
-* @Last Modified time: 2017-08-31 13:07:29
+* @Last Modified time: 2017-12-20 10:27:34
 */
 module.exports = class extends think.Controller {
   constructor(...props) {
     super(...props);
+    // this.sequel('sequel/player', 'sequel').prototype.test = function() {
+    //   console.log(this.id);
+    // }
   }
 
   async indexAction() {
     let type = this.get('type');
     if(type === '1') {
       let model = this.sequel('sequel/player', {type: 'sequel'});
+      // this.sequel('sequel/player', 'sequel').prototype.__proto__.test = function() {
+      //   console.log(this.id);
+      // }
+      // model.addInstanceMethod(function test() {
+      //   console.log(this.id);
+      // });
+      model.build({id: 444, teamId: 123, name: 'lushijie'}).test();
       return this.json(await model.getAllPlayer());
     }else if(type === '2') {
       let model = this.ctx.sequel('sequel/player', {type: 'sequel'});
+      model.build({id: 555, teamId: 123, name: 'lushijie'}).test();
       return this.json(await model.findAndCount());
     }else if(type === '3') {
       let model = think.sequel('sequel/player', {type: 'sequel'});

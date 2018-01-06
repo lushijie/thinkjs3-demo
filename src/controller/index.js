@@ -17,6 +17,14 @@ module.exports = class extends Base {
   }
 
   indexAction() {
-    return this.success('controller index');
+    // return this.fail({
+    //   errno: 'errno',
+    //   errmsg: 'errmsg',
+    //   data: {
+    //     a: 123
+    //   }
+    // });
+    return this.fail('ASD_DS')
+    // return this.success('controller index');
   }
 }

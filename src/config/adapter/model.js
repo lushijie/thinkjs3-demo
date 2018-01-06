@@ -13,10 +13,10 @@ const DB = {
 }
 
 module.exports = {
-  type: 'mysql',
+  type: 'mongo',
   common: {
     logSql: isDev,
-    logger: msg => console.log(msg)
+    logger: msg => console.log('mysql=>', msg)
   },
   mysql: {
     handle: mysql,
@@ -51,6 +51,17 @@ module.exports = {
     useCollectionPlural: false,
     options: {
       // strict: false
+    }
+  },
+  mongo: {
+    host: '127.0.0.1',
+    port: 27000,
+    user: 'lushijie',
+    prefix: 'think_',
+    password: 'lushijiepwd',
+    database: 'think-demo',
+    options: {
+
     }
   }
 };

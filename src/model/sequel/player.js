@@ -2,13 +2,16 @@
 * @Author: lushijie
 * @Date:   2017-08-28 10:20:00
 * @Last Modified by:   lushijie
-* @Last Modified time: 2017-09-03 20:27:37
+* @Last Modified time: 2017-12-20 11:36:03
 */
 
 
 module.exports = class extends think.Sequel {
   constructor(...props) {
     super(...props);
+    this.addInstanceMethod(function test() { // anonymous fn is disabled
+      console.log(this.id);
+    });
   }
 
   get schema() {
@@ -40,6 +43,14 @@ module.exports = class extends think.Sequel {
       ]
     }
   }
+
+  // get instanceMethods() {
+  //   return {
+  //     test() {
+  //       console.log(this.id);
+  //     }
+  //   }
+  // }
 
   getAllPlayer() {
     // let teacher_player = this.sequel('sequel/teacher_player', {type: 'sequel'});

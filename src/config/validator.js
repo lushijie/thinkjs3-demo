@@ -2,7 +2,7 @@
 * @Author: lushijie
 * @Date:   2017-07-16 18:09:58
 * @Last Modified by:   lushijie
-* @Last Modified time: 2017-08-13 17:46:07
+* @Last Modified time: 2017-12-23 21:37:34
 */
 module.exports = {
   rules: {
@@ -15,6 +15,7 @@ module.exports = {
   },
   messages: {
     required: '{name}不能为空',
-    isThinkjs: '{name} should equal string thinkjs'
+    isThinkjs: '{name} should equal string thinkjs',
+    ASD_DS: [1001, 'EFF']
   }
 }

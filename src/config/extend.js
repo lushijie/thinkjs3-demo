@@ -7,16 +7,18 @@ const cache = require('think-cache');
 const session = require('think-session');
 const sequelize = require('think-sequelize');
 const mongoose = require('think-mongoose');
+const mongo = require('think-mongo');
 
 module.exports = [
-  view, //make application support view
-  model(think.app),
+  view,
   email,
   fetch,
-  websocket(think.app),
   cache,
   session,
+  model(think.app),
+  websocket(think.app),
   sequelize(think.app),
-  mongoose(think.app)
+  mongoose(think.app),
+  mongo(think.app)
 ];
 

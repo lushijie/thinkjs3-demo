@@ -2,7 +2,7 @@
 * @Author: lushijie
 * @Date:   2017-08-13 18:51:35
 * @Last Modified by:   lushijie
-* @Last Modified time: 2017-10-16 10:52:12
+* @Last Modified time: 2017-12-27 15:54:58
 */
 
 let clients = [];
@@ -23,9 +23,10 @@ module.exports = class extends think.Controller {
   }
 
   openAction() {
-    clients.push(this.websocket);
+    console.log('this.websocket=>', this.websocket.id);
+    // console.log('this.ctx.websocket=>',this.ctx.websocket);
+    clients.push(this.ctx.websocket);
     console.log('创建新连接 clients.length=', clients.length)
-
     // 只给自己对应的客户端发送消息
     // this.emit('opend', 'This client opened successfully!');
 
