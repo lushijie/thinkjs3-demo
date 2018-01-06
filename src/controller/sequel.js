@@ -2,7 +2,7 @@
 * @Author: lushijie
 * @Date:   2017-08-24 09:33:17
 * @Last Modified by:   lushijie
-* @Last Modified time: 2017-12-20 10:27:34
+* @Last Modified time: 2018-01-06 15:40:02
 */
 module.exports = class extends think.Controller {
   constructor(...props) {
@@ -26,7 +26,9 @@ module.exports = class extends think.Controller {
       return this.json(await model.getAllPlayer());
     }else if(type === '2') {
       let model = this.ctx.sequel('sequel/player', {type: 'sequel'});
-      model.build({id: 555, teamId: 123, name: 'lushijie'}).test();
+      // console.log(model.conn());
+      console.log(model.conn());
+      model.build({id: 555, teamId: 123, name: 'lushijie'}).test123();
       return this.json(await model.findAndCount());
     }else if(type === '3') {
       let model = think.sequel('sequel/player', {type: 'sequel'});
