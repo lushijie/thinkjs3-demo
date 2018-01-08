@@ -1,4 +1,0 @@
-
-> thinkjs-application@1.0.0 start /Users/lushijie/thinkjs/thinkjs3-demo
-> node development.js
-
