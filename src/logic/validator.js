@@ -2,7 +2,7 @@
 * @Author: lushijie
 * @Date:   2017-08-20 18:52:08
 * @Last Modified by:   lushijie
-* @Last Modified time: 2017-10-09 11:05:13
+* @Last Modified time: 2018-01-15 09:56:29
 */
 module.exports = class extends think.Logic {
   // get scope() {
@@ -32,10 +32,12 @@ module.exports = class extends think.Logic {
   }
 
   index2Action() {
+    console.log(this.ctx.method);
+    this.allowMethods = 'put'; //  只允许 POST 请求类型
     this.rules = {
       name: {
         required: true,
-        isThinkjs: true,
+        // isThinkjs: true,
         aliasName: '姓名'
       }
     }

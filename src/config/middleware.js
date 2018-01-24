@@ -9,10 +9,10 @@ module.exports = [
       sendResponseTime: isDev
     }
   },
-  {
-    handle: 'graphql',
-    options: {}
-  },
+  // {
+  //   handle: 'graphql',
+  //   options: {}
+  // },
   // 'graphql',
 
   // function(ctx, next) {
@@ -43,6 +43,7 @@ module.exports = [
       uploadDir: path.join(think.ROOT_PATH, 'upload')
     }
   },
+  'graphql',
   {
     handle: 'router',
     options: {

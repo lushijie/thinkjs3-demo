@@ -1,9 +1,10 @@
 const path = require('path');
 const cookieSession = require('think-session-cookie');
 const fileSession = require('think-session-file');
+const redisSession = require('think-session-redis');
 
 module.exports = {
-  type: 'cookie',
+  type: 'redis',
   common: {
     cookie: {
       name: 'thinkjs',
@@ -22,5 +23,15 @@ module.exports = {
   file: {
     handle: fileSession,
     sessionPath: path.join(think.ROOT_PATH, 'runtime/session')
+  },
+  redis: {
+    handle: redisSession,
+    port: 6379,
+    maxAge: 60 * 1000,
+    autoUpdate: true,
+    // host: '127.0.0.1',
+    // password: ''
+    host: '116.255.177.161',
+    password: 'ivagnerpass'
   }
 }

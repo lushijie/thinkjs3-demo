@@ -2,7 +2,7 @@
 * @Author: lushijie
 * @Date:   2018-01-06 14:08:37
 * @Last Modified by:   lushijie
-* @Last Modified time: 2018-01-06 14:26:27
+* @Last Modified time: 2018-01-24 14:02:47
 */
 module.exports = class extends think.Controller {
   constructor(...arg) {
@@ -10,17 +10,21 @@ module.exports = class extends think.Controller {
   }
 
   async indexAction() {
-    let mg = this.mongo('mongo1')
+    let mg = this.mongo('mongo1');
+    let data = await mg.where({name: 'lushijie'}).order({id: 'DESC'}).select();
+    // let data = await mg.where({'name': {$ne: 'gexufei'}}).select();
+    // let data = await mg.getList();
+    this.json(data);
 
-    mg.createIndex({id: 1}, {unique: true});
-    console.log(await mg.getIndexes());
+    // mg.createIndex({id: 1}, {unique: true});
+    // console.log(await mg.getIndexes());
 
-    mg.add({
-      id: +new Date(),
-      name: 'lushijie'
-    });
+    // mg.add({
+    //   id: +new Date(),
+    //   name: 'lushijie'
+    // });
 
-    let res = await mg.getList();
-    console.log(res);
+    // let res = await mg.getList();
+    // console.log(res);
   }
 }

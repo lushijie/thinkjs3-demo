@@ -13,14 +13,15 @@ const DB = {
 }
 
 module.exports = {
-  type: 'sequel',
+  type: 'mongo',
   common: {
     logSql: isDev,
     logger: msg => console.log('mysql=>', msg)
   },
   mysql: {
     handle: mysql,
-    ...DB
+    ...DB,
+    pageSize: 3
   },
   sequel: {
     prefix: 'think_',

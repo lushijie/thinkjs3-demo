@@ -16,7 +16,7 @@ module.exports = class extends Base {
     })
   }
 
-  indexAction() {
+  async indexAction() {
     // return this.fail({
     //   errno: 'errno',
     //   errmsg: 'errmsg',
@@ -24,7 +24,7 @@ module.exports = class extends Base {
     //     a: 123
     //   }
     // });
-    return this.fail('ASD_DS')
-    // return this.success('controller index');
+    // return this.fail('ASD_DS')
+    return this.success('controller index');
   }
 }
