@@ -5,7 +5,7 @@
   <script type="text/javascript" src="http://lib.baomitu.com/jquery/2.2.4/jquery.min.js"></script>
 </head>
 <body>
-  123
+  <span class="result"></span>
   <script type="text/javascript">
     $.ajax({
        type: "POST",
@@ -13,9 +13,9 @@
        data: {
         query: '{hello}'
        },
-       success: function(msg){
-        console.log(msg);
-         // alert( "Data Saved: " + msg );
+       success: function(data){
+        console.log(data);
+        $('.result').html(JSON.stringify(data.data));
        }
     });
   </script>

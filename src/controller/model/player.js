@@ -2,7 +2,7 @@
 * @Author: lushijie
 * @Date:   2017-09-10 14:47:43
 * @Last Modified by:   lushijie
-* @Last Modified time: 2018-01-24 11:20:04
+* @Last Modified time: 2018-02-11 09:48:33
 */
 module.exports = class extends think.Controller {
   constructor(...arg) {
@@ -12,8 +12,8 @@ module.exports = class extends think.Controller {
   }
 
   async indexAction() {
-    this.json(await this.modelInstance.page(1, 2).countSelect());
-    // this.json(await this.modelInstance.getAllPlayers());
+    // this.json(await this.modelInstance.page(1, 2).countSelect());
+    this.json(await this.modelInstance.getAllPlayers());
   }
 
   async index2Action() {

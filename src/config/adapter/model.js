@@ -13,7 +13,7 @@ const DB = {
 }
 
 module.exports = {
-  type: 'mongo',
+  type: 'mysql',
   common: {
     logSql: isDev,
     logger: msg => console.log('mysql=>', msg)

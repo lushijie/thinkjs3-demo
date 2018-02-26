@@ -2,7 +2,7 @@
 * @Author: lushijie
 * @Date:   2017-11-29 09:27:47
 * @Last Modified by:   lushijie
-* @Last Modified time: 2017-11-30 16:29:07
+* @Last Modified time: 2018-02-24 10:25:57
 */
 import {
   graphql,
@@ -78,7 +78,7 @@ module.exports = class extends think.Controller {
     let result2 = await graphql(schema2, query, rootValue);
     console.log(result2);
 
-    console.log(isValidJSValue('aa11223', GraphQLInt))
+    // console.log(isValidJSValue('aa11223', GraphQLInt))
     return this.json(result);
   }
 }
