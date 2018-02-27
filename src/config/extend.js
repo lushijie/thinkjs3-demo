@@ -8,6 +8,7 @@ const session = require('think-session');
 const sequelize = require('think-sequelize');
 const mongoose = require('think-mongoose');
 const mongo = require('think-mongo');
+const graphql = require('think-graphql');
 
 module.exports = [
   view,
@@ -19,6 +20,7 @@ module.exports = [
   websocket(think.app),
   sequelize(think.app),
   mongoose(think.app),
-  mongo(think.app)
+  mongo(think.app),
+  graphql
 ];
 

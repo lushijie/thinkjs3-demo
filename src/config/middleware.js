@@ -43,7 +43,6 @@ module.exports = [
       uploadDir: path.join(think.ROOT_PATH, 'upload')
     }
   },
-  'graphql',
   {
     handle: 'router',
     options: {

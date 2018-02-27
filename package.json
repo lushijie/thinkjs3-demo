@@ -9,8 +9,7 @@
   "dependencies": {
     "clone-deep": "^0.3.0",
     "deep-extend": "^0.5.0",
-    "graphql": "^0.11.7",
-    "graphql-request": "^1.4.0",
+    "graphql-tools": "^2.21.0",
     "install": "^0.10.1",
     "merge": "^1.2.0",
     "mysql2": "^1.5.1",
@@ -31,6 +30,7 @@
     "think-csrf": "^1.0.2",
     "think-email": "^1.0.2",
     "think-fetch": "^1.1.0",
+    "think-graphql": "^1.0.0-alpha.1",
     "think-i18n": "^1.2.3",
     "think-model": "^1.1.6",
     "think-model-mysql": "^1.0.6",
