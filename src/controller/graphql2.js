@@ -2,7 +2,7 @@
 * @Author: lushijie
 * @Date:   2018-02-26 11:54:28
 * @Last Modified by:   lushijie
-* @Last Modified time: 2018-02-27 14:55:25
+* @Last Modified time: 2018-02-27 17:27:28
 */
 const { makeExecutableSchema } = require('graphql-tools');
 
@@ -26,8 +26,13 @@ module.exports = class extends think.Controller {
 
     // The GraphQL schema in string form
     const typeDefs = `
-      type Query { books: [Book] }
-      type Book { title: String, author: String }
+      type Query {
+        books: [Book]
+      }
+      type Book {
+        title: String,
+        author: String
+      }
     `;
 
     // The resolvers
