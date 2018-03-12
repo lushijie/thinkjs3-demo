@@ -8,7 +8,7 @@ const session = require('think-session');
 const sequelize = require('think-sequelize');
 const mongoose = require('think-mongoose');
 const mongo = require('think-mongo');
-const graphql = require('think-graphql');
+const graphql = require('think-apollo-graphql');
 
 module.exports = [
   view,
