@@ -3,7 +3,7 @@ const ws = require('think-websocket-ws');
 const redis = require('socket.io-redis');
 
 module.exports = {
-  type: 'ws',
+  type: 'socketio',
   common: {
     // common config
   },
@@ -15,9 +15,9 @@ module.exports = {
     messages: [
       {
         namespace: 'space1',
-        // close: '/restful/api/getAction',
-        open: '/restful/api/getAction',
-        // addUser: '/websocket_socketio/addUser'
+        close: '/websocket_socketio/close',
+        open: '/websocket_socketio/open',
+        addUser: '/websocket_socketio/addUser'
       },
     ]
   },
