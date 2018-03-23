@@ -20,6 +20,7 @@
     "smart-extend": "^1.7.2",
     "socket.io-redis": "^5.2.0",
     "sockjs": "^0.3.18",
+    "think-apollo-graphql": "^1.0.0-alpha.2",
     "think-babel": "^1.1.0",
     "think-cache": "^1.0.7",
     "think-cache-file": "^1.0.10",

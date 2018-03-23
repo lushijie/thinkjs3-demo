@@ -2,7 +2,7 @@
 * @Author: lushijie
 * @Date:   2017-08-20 18:52:08
 * @Last Modified by:   lushijie
-* @Last Modified time: 2018-01-15 09:56:29
+* @Last Modified time: 2018-03-19 18:42:33
 */
 module.exports = class extends think.Logic {
   // get scope() {
@@ -14,6 +14,20 @@ module.exports = class extends think.Logic {
   // }
 
   indexAction(){
+    // let rules = {
+    //   b: {
+    //     array: true,
+    //     children: {
+    //       checkArray: true
+    //     }
+    //   }
+    // }
+    // if(!this.validate(rules)) {
+    //   return this.fail(this.validateErrors);
+    // }
+
+    this.allowMethods = 'put';
+
     let rules = {
       name: {
         required: true,
