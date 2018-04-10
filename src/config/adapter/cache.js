@@ -1,3 +1,4 @@
+const helper = require('think-helper');
 const fileCache = require('think-cache-file');
 const redisCache = require('think-cache-redis');
 const memcacheCache = require('think-cache-memcache');
@@ -18,7 +19,10 @@ module.exports = {
     handle: redisCache,
     port: 6379,
     host: '127.0.0.1',
-    password: ''
+    password: '',
+    reuse: function(config) {
+      return helper.md5(config.port + config.host);
+    }
   },
   memcache: {
     handle: memcacheCache,
