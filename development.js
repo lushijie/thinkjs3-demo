@@ -13,6 +13,7 @@ const instance = new Application({
     //     "transform-async-to-generator": false
     //   }
     // ]],
+    plugins: ['transform-decorators-legacy'],
     babelrc: false
   }],
   notifier: notifier.notify.bind(notifier),

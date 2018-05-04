@@ -1,5 +1,16 @@
 const Base = require('./base.js');
 
+function checkAuth(target, name, descriptor) {
+  const action = descriptor.value;
+  descriptor.value = function() {
+    if (!this.get('a')) {
+      return this.fail('没有携带参数a');
+    }
+    return action.apply(this, arguments);
+  }
+  return descriptor;
+}
+
 module.exports = class extends Base {
   constructor(...arg) {
     super(...arg);
@@ -58,9 +69,11 @@ module.exports = class extends Base {
     return this.success('获取信息成功');
   }
 
+  @checkAuth
   loginAction () {
     // 验证通过之后生成token, 种coookie
-    const token = super.updateAuth('lushijie');
-    return this.success(token);
+    // const token = super.updateAuth('lushijie');
+    // return this.success(token);
+    return this.success('111');
   }
 }

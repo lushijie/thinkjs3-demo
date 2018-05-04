@@ -42,7 +42,6 @@ module.exports = [
   {
     handle: jwt,
     match(ctx) {
-      console.log(ctx.path);
       return !/^\/index\/login/.test(ctx.path);
     },
     options: {
