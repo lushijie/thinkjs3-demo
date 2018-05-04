@@ -1,4 +1,5 @@
 const path = require('path');
+const jwt = require('koa-jwt');
 const isDev = think.env === 'development';
 
 module.exports = [
@@ -30,11 +31,23 @@ module.exports = [
   },
   {
     handle: 'trace',
+    // enable: false,
     options: {
       debug: isDev,
       error(err, ctx) {
         console.log(err, ctx);
       }
+    }
+  },
+  {
+    handle: jwt,
+    match(ctx) {
+      console.log(ctx.path);
+      return !/^\/index\/login/.test(ctx.path);
+    },
+    options: {
+      cookie: think.config('jwtCookie'),
+      secret: think.config('jwtSecret')
     }
   },
   {

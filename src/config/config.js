@@ -16,6 +16,10 @@ module.exports = {
   defaultErrno: 1000, // 默认错误号
   validateDefaultErrno: 1001, // 默认验证失败错误号
   stickyCluster: true,
+
+  jwtSecret: 'lushijie12121212',
+  jwtCookie: 'jwt-token',
+
   cookie: {
     domain: '',
     path: '/',

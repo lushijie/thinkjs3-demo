@@ -11,6 +11,8 @@
     "deep-extend": "^0.5.0",
     "graphql-tools": "^2.21.0",
     "install": "^0.10.1",
+    "jsonwebtoken": "^8.2.1",
+    "koa-jwt": "^2.2.4",
     "merge": "^1.2.0",
     "mysql2": "^1.5.1",
     "node-notifier": "^5.1.2",

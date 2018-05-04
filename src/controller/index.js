@@ -53,7 +53,14 @@ module.exports = class extends Base {
     // this.cache('a', null);
     // this.cache('a', null);
     // new think.app.controllers.pad2().indexAction()
-    console.log(think.Controller.toString())
-    return this.success('controller index');
+    // console.log('1111');
+    console.log(this.ctx.state.user);
+    return this.success('获取信息成功');
+  }
+
+  loginAction () {
+    // 验证通过之后生成token, 种coookie
+    const token = super.updateAuth('lushijie');
+    return this.success(token);
   }
 }
