@@ -25,6 +25,35 @@ module.exports = class extends Base {
     //   }
     // });
     // return this.fail('ASD_DS')
+    //
+    //
+    // await this.cache('a', 'test123123', {
+    //   timeout: 60 * 1000
+    // });
+    // this.cache('a', null).then(res => {}, err => {
+    //   console.log(err);
+    // });
+
+    // console.log('1:', await this.cache('a'));
+
+    // for (let i = 0; i < 10000; i++) {
+    //   await this.cache('a');
+    // }
+
+    // for (let i = 0; i < 10000; i++) {
+    //   await this.cache('a', null);
+    // }
+
+    // console.log('2:', await this.cache('a'));
+
+
+    // this.cache('a');
+    // this.cache('a');
+    // this.cache('a');
+    // this.cache('a', null);
+    // this.cache('a', null);
+    // new think.app.controllers.pad2().indexAction()
+    console.log(think.Controller.toString())
     return this.success('controller index');
   }
 }

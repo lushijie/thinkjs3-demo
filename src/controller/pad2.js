@@ -2,7 +2,7 @@
 * @Author: lushijie
 * @Date:   2017-09-18 17:36:57
 * @Last Modified by:   lushijie
-* @Last Modified time: 2017-09-18 17:43:52
+* @Last Modified time: 2018-04-26 16:55:21
 */
 module.exports = class extends think.Controller {
   constructor(...arg) {
@@ -10,8 +10,8 @@ module.exports = class extends think.Controller {
   }
 
   async indexAction() {
-    console.log(this.get('name'));
-    return this.success('this is pad.js');
+    console.log('123123');
+    // return this.success('this is pad.js');
   }
 
 }

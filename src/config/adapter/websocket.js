@@ -3,7 +3,7 @@ const ws = require('think-websocket-ws');
 const redis = require('socket.io-redis');
 
 module.exports = {
-  type: 'socketio',
+  type: 'ws',
   common: {
     // common config
   },

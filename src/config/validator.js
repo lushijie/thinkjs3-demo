@@ -2,7 +2,7 @@
 * @Author: lushijie
 * @Date:   2017-07-16 18:09:58
 * @Last Modified by:   lushijie
-* @Last Modified time: 2018-03-23 16:23:22
+* @Last Modified time: 2018-04-13 11:00:09
 */
 
 const Ajv = require('ajv');
@@ -20,6 +20,7 @@ module.exports = {
       console.log(value);
     },
     jsonSchema: function(value, {argName, validName, validValue, parsedValidValue, rule, rules, currentQuery, ctx}) {
+      // console.log(validValue);
       let validate = ajv.compile(validValue);
       let valid = validate(value);
       if (valid) return true;

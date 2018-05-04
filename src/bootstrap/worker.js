@@ -1,7 +1,6 @@
 //invoked in worker
 think.app.on("appReady", async () => {
   // console.log(await think.model('mysql/player').getAllPlayers())；
-  // console.log(think.app.models);
 });
 
 global.getASCIISum = function(str) {

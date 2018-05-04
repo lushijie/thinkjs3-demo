@@ -2,7 +2,7 @@
 * @Author: lushijie
 * @Date:   2017-08-13 18:51:35
 * @Last Modified by:   lushijie
-* @Last Modified time: 2017-12-27 15:54:58
+* @Last Modified time: 2018-04-13 11:33:10
 */
 
 let clients = [];
@@ -23,22 +23,15 @@ module.exports = class extends think.Controller {
   }
 
   openAction() {
-    console.log('this.websocket=>', this.websocket.id);
-    // console.log('this.ctx.websocket=>',this.ctx.websocket);
     clients.push(this.ctx.websocket);
     console.log('创建新连接 clients.length=', clients.length)
-    // 只给自己对应的客户端发送消息
-    // this.emit('opend', 'This client opened successfully!');
-
-    // 给所有的客户端发送消息
-    //this.broadcast('joined', 'There is a new client joined successfully!')
   }
 
   addUserAction() {
+    // this.ctx.websocket.send('ssss'); // 只给自己发送
+    console.log('this.ctx.req.wss=', this.ctx.req.wss.clients);
+    // console.log(this.ctx.wss.clients[0].send(Math.random().toString()));
     this.broadcast('addUserCallBack', this.wsData);
-    // console.log(this.wsData); // this.req.websocketData, this.data is deprecated
-    // console.log(this.websocket); // this.req.websocket
-    // console.log(this.isWebsocket); // this.isMethod('WEBSOCKET')
 
   }
 }

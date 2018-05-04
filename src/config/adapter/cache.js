@@ -5,9 +5,9 @@ const memcacheCache = require('think-cache-memcache');
 const path = require('path');
 
 module.exports = {
-  type: 'redis',
+  type: 'file',
   common: {
-    timeout: 60 * 60 * 1000, // millisecond
+    timeout: 30 * 1000,
   },
   file: {
     handle: fileCache,

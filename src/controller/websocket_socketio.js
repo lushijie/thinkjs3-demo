@@ -2,7 +2,7 @@
 * @Author: lushijie
 * @Date:   2017-08-13 18:51:35
 * @Last Modified by:   lushijie
-* @Last Modified time: 2017-11-21 10:42:25
+* @Last Modified time: 2018-04-28 17:43:05
 */
 
 let ids = [];
@@ -49,7 +49,7 @@ module.exports = class extends think.Controller {
 
     // 向 room 中的用户进行广播，不在该 room 的用户不会收到消息
     this.ctx.req.io.to(this.wsData.room).emit('addUserCallBack', this.wsData);
-    // 或
+    // 或如果存在空间
     // this.ctx.req.io.of('space1').to(this.wsData.room).emit('addUserCallBack', this.wsData);
   }
 

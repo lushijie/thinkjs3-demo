@@ -13,7 +13,7 @@ const DB = {
 }
 
 module.exports = {
-  type: 'mysql',
+  type: 'mongo',
   common: {
     logSql: isDev,
     logger: msg => console.log('mysql=>', msg)
@@ -63,7 +63,8 @@ module.exports = {
     database: 'think-demo',
     options: {
 
-    }
+    },
+    logLevel: 'info'
   }
 };
 
