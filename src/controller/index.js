@@ -74,6 +74,8 @@ module.exports = class extends Base {
     // 验证通过之后生成token, 种coookie
     // const token = super.updateAuth('lushijie');
     // return this.success(token);
+
+    // 装饰器
     return this.success('111');
   }
 }
