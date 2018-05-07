@@ -45,8 +45,8 @@ module.exports = [
       // return !/^\/index\/login/.test(ctx.path);
     // },
     options: {
-      cookie: think.config('jwtCookie'),
-      secret: think.config('jwtSecret'),
+      cookie: think.config('jwt')['cookie'],
+      secret: think.config('jwt')['secret'],
       passthrough: true
     }
   },
