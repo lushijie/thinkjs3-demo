@@ -41,9 +41,9 @@ module.exports = [
   },
   {
     handle: jwt,
-    match(ctx) {
-      return !/^\/index\/login/.test(ctx.path);
-    },
+    // match(ctx) {
+      // return !/^\/index\/login/.test(ctx.path);
+    // },
     options: {
       cookie: think.config('jwtCookie'),
       secret: think.config('jwtSecret'),

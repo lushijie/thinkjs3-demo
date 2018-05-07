@@ -2,21 +2,23 @@
 * @Author: lushijie
 * @Date:   2017-07-21 09:44:55
 * @Last Modified by:   lushijie
-* @Last Modified time: 2018-05-07 10:54:02
+* @Last Modified time: 2018-05-07 11:21:58
 */
 
 const jsonwebtoken = require('jsonwebtoken');
 
 module.exports = {
+  authFail() {
+    return this.fail('token 验证失败');
+  },
+
   checkAuth(target, name, descriptor) {
-    console.log('checkAuth outter...');
     const action = descriptor.value;
     descriptor.value = function() {
+      console.log(this);
       const userName = this.ctx.state.user && this.ctx.state.user.name;
-
-      console.log('userName=', userName);
       if (!userName) {
-        return this.fail('token 验证失败');
+        return think.authFail.bind(this)();
       }
       think.updateAuth.bind(this)(userName);
       return action.apply(this, arguments);
