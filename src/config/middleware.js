@@ -46,7 +46,8 @@ module.exports = [
     },
     options: {
       cookie: think.config('jwtCookie'),
-      secret: think.config('jwtSecret')
+      secret: think.config('jwtSecret'),
+      passthrough: true
     }
   },
   {
