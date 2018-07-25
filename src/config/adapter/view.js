@@ -14,7 +14,9 @@ module.exports = {
   },
   nunjucks: {
     handle: nunjucks,
-    options: { // nunjucks 的配置，例如重新定义定界符
+    options: {
+      noCache: true,
+     // nunjucks 的配置，例如重新定义定界符
       // tags: {
       //   blockStart: '<%',
       //   blockEnd: '%>',
