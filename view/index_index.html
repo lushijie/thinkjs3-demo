@@ -3,8 +3,57 @@
   <head>
     <meta charset="utf-8">
     <title>Hello</title>
+
+    <script type="text/javascript" src="https://s0.meituan.net/bs/knb/v1.6.2/knb.js"></script>
   </head>
   <body>
-    Hello World!
+    Hello World12345
+    <script type="text/javascript">
+      alert(123123);
+      // KNB.ready(function(){
+      //   KNB.config({
+      //     debug:true, //是否开启调试模式。开启后会以alert打印调试信息。default: false
+      //   });
+
+      //   // alert('ready');
+      //   //确保knb loader已经加载完成具体的knb实现
+      //   //确保桥的native部分已经ready，权限验证已经通过(在点评主App)
+
+      //   KNB.setTitle({
+      //     title: "标题",  //标题
+      //     handle: function(){
+      //       alert('title被点击了') ; //MTNB下
+      //     },
+      //     success: function(){
+      //       alert('set title success');
+      //     },
+      //     fail: function(){
+      //       alert('auth error')
+      //     }
+      //   });
+
+      //   setTimeout(function(){
+      //     KNB.share({
+      //       title:"分享标题", //标题
+      //       desc:"分享描述",  // 分享描述
+      //       image:"http://www.dpfile.com/toevent/img/16d05c85a71b135edc39d197273746d6.png", //分享图标
+      //       url:"http://m.dianping.com", //分享链接
+      //       channel: [KNB.share.WECHAT_FRIENDS,KNB.share.WECHAT_TIMELINE], //分享渠道,当分享渠道只有一个时，触发直接分享 美团下暂不支持
+      //       miniProgram: {
+      //         id: "gh_870576f3c6f9",// 标识分享的小程序，参数为小程序原始id，必填项
+      //         path: "mt/pages/deal/deal?id=46764670",// 标识分享的小程序路径，必填项
+      //         image:"https://s3-img.meituan.net/v1/mss_491cda809310478f898d7e10a9bb68ec/profile12/1bd62f96-2a7b-462d-9c48-b7c1a41ad927_200_154", // 小程序图片链接，必填项
+      //       }, // 选填项，如果已填，内部参数均必填，同时分享面板会有分享小程序按钮，mt > 9.1
+      //       success: function(channel){
+      //         alert('分享成功');
+      //       },
+      //       fail: function(res){
+      //         alert(JSON.stringify(res)) //用户取消了分享执行fail函数
+      //       }
+      //     });
+      //   }, 3000);
+
+      // });
+    </script>
   </body>
 </html>

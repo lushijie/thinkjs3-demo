@@ -20,7 +20,7 @@ module.exports = {
   jwt: {
     secret: 'lushijie12121212',
     cookie: 'jwt-token',
-    expire: 60
+    expire: 300 // 秒
   },
 
   cookie: {

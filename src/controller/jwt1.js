@@ -2,28 +2,35 @@
 * @Author: lushijie
 * @Date:   2018-05-07 11:31:26
 * @Last Modified by:   lushijie
-* @Last Modified time: 2018-05-07 16:00:30
+* @Last Modified time: 2018-07-26 19:19:31
 */
-const Base = require('./base.js');
-let checkAuth = think.Controller.prototype.checkAuth;
-let updateAuth = think.Controller.prototype.updateAuth;
+const userList = {
+  lushijie: '123123',
+  gexufei: '456456'
+};
 
-// 部分验证
 module.exports = class extends think.Controller {
-  @checkAuth
-  async indexAction() {
-    return this.success(this.ctx.state.user);
+  async userAction() {
+    const userInfo = this.ctx.state.user;
+    if (userInfo) {
+      return this.success(userInfo);
+    } else {
+      return this.fail('获取用户信息失败');
+    }
   }
 
   loginAction() {
-    // 验证通过之后生成token, 种coookie
-    const token = this.updateAuth('lushijie');
-    return this.success(token);
+    const {name, password} = this.get();
+    if (userList[name] && password === userList[name]) {
+      const token = this.updateAuth(name);
+      return this.success(token);
+    } else {
+      return this.fail('登陆失败');
+    }
   }
 
   logoutAction() {
-    this.updateAuth();
+    this.updateAuth(null);
     return this.success('退出登录成功');
   }
 }
-

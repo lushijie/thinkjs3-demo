@@ -48,7 +48,8 @@ module.exports = class extends think.Controller {
 
     // new think.app.controllers.pad2().indexAction()
     // return this.success(this.ctx.state.user);
-    return this.success('hello world');
+    // return this.success('hello world');
+    return this.display();
   }
 }
 
